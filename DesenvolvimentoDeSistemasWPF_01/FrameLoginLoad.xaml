@@ -1,0 +1,18 @@
+﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.FrameLoginLoad"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="FrameLoginLoad">
+
+    <Grid>
+        <!--<Image Name="m_circle" HorizontalAlignment="Center" VerticalAlignment="Center" Source="Images/loading_circle_large.gif" Height="80" Width="80">
+            
+        </Image>-->
+        
+        <Label Name="m_lblLoad" FontSize="40" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">Loading</Label>
+        
+    </Grid>
+</Page>
