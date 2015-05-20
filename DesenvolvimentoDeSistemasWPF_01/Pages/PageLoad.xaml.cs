@@ -21,11 +21,12 @@ namespace DesenvolvimentoDeSistemasWPF_01
   /// </summary>
   /// 
 
-  public partial class FrameLoginLoad : Page
+  public partial class PageLoad : Page
   {
     private readonly DispatcherTimer animationTimer;
+    private ControlFacade m_control;
 
-    public FrameLoginLoad()
+    public PageLoad()
     {
       animationTimer = new DispatcherTimer(
           DispatcherPriority.ContextIdle, Dispatcher);
@@ -35,16 +36,22 @@ namespace DesenvolvimentoDeSistemasWPF_01
       animationTimer.Start();
       Mouse.OverrideCursor = Cursors.Wait;
 
+      m_control = ControlFacade.Instance;
+
       InitializeComponent();
     }
 
     void animationTimer_Tick(object sender, EventArgs e)
     {
-      Console.WriteLine("eyye");
-
       if (UserSession.GetLoginAttempts() > 0 && UserSession.IsLogedIn())
       {
         //NAVEGA PRA PAGINA DO USUARIO
+        m_control.LogIn();
+
+        Mouse.OverrideCursor = Cursors.Arrow;
+
+        if(NavigationService != null)
+          NavigationService.Navigate(new PageProfessor());
       }
       else
       {

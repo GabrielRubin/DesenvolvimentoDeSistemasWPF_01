@@ -48,6 +48,16 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return m_isLogged;
     }
 
+    public static string GetUserID()
+    {
+      return m_userId;
+    }
+
+    public static string GetUserType()
+    {
+      return m_userType;
+    }
+
     public static void Print()
     {
       if (m_isLogged)

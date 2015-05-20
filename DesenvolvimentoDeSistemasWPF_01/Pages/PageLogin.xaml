@@ -1,11 +1,11 @@
-﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.FrameLogin"
+﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.PageLogin"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:vm="clr-namespace:DesenvolvimentoDeSistemasWPF_01.ViewModels" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-	Title="FrameLogin">
+      mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300"
+	Title="FrameLogin" >
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -27,28 +27,20 @@
 
         <Border Background="SteelBlue" Grid.RowSpan="7" Grid.ColumnSpan="3" />
 
-        <Label Grid.Row="0" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">
-            User ID:
-        </Label>
+        <TextBlock Name="m_lblId" Text="User Id" Grid.Row="0" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
         <TextBox Name="m_userId" Grid.Row="1" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
-        <Label Name="m_lblIDError" Grid.Row="1" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" Visibility="Hidden">
-            ID não encontrado!
-        </Label>
+        <TextBlock Name="m_lblIDError" Text="{Binding UserIDErrorMsg}" Grid.Row="1" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <Label Grid.Row="2" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">
-            Password:
-        </Label>
+        <TextBlock Name="m_lblPass" Text="Password" Grid.Row="2" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
         <PasswordBox Name="m_userPass" Grid.Row="3" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
-        <Label Name="m_lblPassError" Grid.Row="3" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"  Visibility="Hidden">
-            Password não confere!
-        </Label>
+        <TextBlock Name="m_lblPassError" Text="{Binding PassErrorMsg}" Grid.Row="3" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
 
         <Button Grid.Row="5" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnButtonClick" ClickMode="Release" IsDefault="True">
-            LOG IN
+            LOG IN 
         </Button>
 
     </Grid>

@@ -53,22 +53,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FrameLogin.xaml.cs">
-      <DependentUpon>FrameLogin.xaml</DependentUpon>
+    <Compile Include="ControlFacade.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Pages\PageProfessor.xaml.cs">
+      <DependentUpon>PageProfessor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FrameLoginLoad.xaml.cs">
-      <DependentUpon>FrameLoginLoad.xaml</DependentUpon>
+    <Compile Include="ViewModels\PageLoginModel.cs" />
+    <Compile Include="ViewModels\PageProfessorModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Pages\PageLogin.xaml.cs">
+      <DependentUpon>PageLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageLoad.xaml.cs">
+      <DependentUpon>PageLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="SyncServer.cs" />
     <Compile Include="TabelaDeHorarios.xaml.cs">
       <DependentUpon>TabelaDeHorarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
-    <Page Include="FrameLogin.xaml">
+    <Page Include="Pages\PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FrameLoginLoad.xaml">
+    <Page Include="Pages\PageLoad.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -84,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\PageProfessor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TabelaDeHorarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -119,6 +131,7 @@
   <ItemGroup>
     <Resource Include="Images\loading_circle_large.gif" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
