@@ -31,15 +31,13 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       string[] data = serverResponse.Split('@'); //data[0] = registro; data[1] = nome; data[2] = tipo; data[3] = horarios
 
-      Console.WriteLine(data[1]);
-
       m_userId = data[0];
 
       m_userName = data[1];
 
       m_userType = data[2];
 
-      if(data.Length == 4) {
+      if(data.Length == 4 && data[3].Length > 0) {
         
         string[] aux = data[3].Split(null);
 
