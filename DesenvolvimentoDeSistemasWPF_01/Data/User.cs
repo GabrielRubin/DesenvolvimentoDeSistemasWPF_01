@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesenvolvimentoDeSistemasWPF_01.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,46 +9,57 @@ namespace DesenvolvimentoDeSistemasWPF_01
 {
   public enum UserType { Null, Professor, Coordenador, Adm };
 
-  public class User
-  {
-    string _userID = "";
+  public class User { 
+    
+    string m_userID = "";
     public string UserID
     {
         get
         {
-            return _userID;
+            return m_userID;
         }
         set
         {
-            if (_userID != value)
-                _userID = value;
+            if (m_userID != value)
+                m_userID = value;
         }
     }
-    string _userName = "";
+
+    string m_userName = "";
     public string UserName
     {
         get
         {
-            return _userName;
+            return m_userName;
         }
         set
         {
-            if (_userName != value)
-                _userName = value;
+            if (m_userName != value)
+                m_userName = value;
         }
     }
-    UserType _userType = 0;
+
+    UserType m_userType = 0;
     public UserType UserType
     {
       get
       {
-        return _userType;
+        return m_userType;
       }
       set
       {
-        _userType = value;
+        m_userType = value;
       }
     }
 
+    public User Create ( UserType type, string horarios = null ) {
+    
+      switch(type) {
+      
+        case UserType.Professor: return new Professor(horarios);
+      }
+
+      return null;
+    }
   }
 }

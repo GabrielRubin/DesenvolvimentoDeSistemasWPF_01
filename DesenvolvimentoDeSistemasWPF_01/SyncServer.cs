@@ -54,6 +54,8 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
+      Console.WriteLine(task.Result);
+
       UserSession.GetServerResponse(task.Result);
     }
   }

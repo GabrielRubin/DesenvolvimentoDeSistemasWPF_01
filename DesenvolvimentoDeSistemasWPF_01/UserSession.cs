@@ -10,9 +10,13 @@ namespace DesenvolvimentoDeSistemasWPF_01
   {
     static bool m_isLogged = false;
 
+    static string m_userName = "";
+
     static string m_userId = "";
 
     static string m_userType = "";
+
+    static string m_userRest = "";
 
     static int m_loginAttempt = 0;
   
@@ -20,16 +24,23 @@ namespace DesenvolvimentoDeSistemasWPF_01
     {
       m_loginAttempt++;
 
-      string[] data = serverResponse.Split(':');
+      // 11111111@Demervaldo Batista@1@0:A-B;0:N-P
+
+      if(serverResponse.Contains("#ER"))
+        return false;
+
+      string[] data = serverResponse.Split('@'); //data[0] = registro; data[1] = nome; data[2] = tipo; data[3] = horarios
 
       Console.WriteLine(data[1]);
 
       m_userId = data[0];
 
-      if(m_userId.Contains("#ER"))
-        return false;
+      m_userName = data[1];
 
-      m_userType = data[1];
+      m_userType = data[2];
+
+      if(data.Length == 4)
+        m_userRest = data[3];
 
       m_isLogged = true;
 
@@ -48,6 +59,11 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return m_isLogged;
     }
 
+    public static string GetUserName()
+    {
+      return m_userName;
+    }
+
     public static string GetUserID()
     {
       return m_userId;
@@ -58,8 +74,13 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return m_userType;
     }
 
-    public static void Print()
+    public static string GetUserRest()
     {
+      return m_userRest;
+    }
+
+    public static void Print() {
+
       if (m_isLogged)
       {
         Console.WriteLine("USER ID: " + m_userId);
@@ -74,6 +95,5 @@ namespace DesenvolvimentoDeSistemasWPF_01
         Console.WriteLine("FAILED TO LOG IN!");
       }
     }
-  
   }
 }

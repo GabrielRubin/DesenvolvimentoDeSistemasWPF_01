@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesenvolvimentoDeSistemasWPF_01.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,29 +35,36 @@ namespace DesenvolvimentoDeSistemasWPF_01
     }
 
 
-    internal void LogIn()
-    {
-      //string userType = UserSession.GetUserType();
-      string serverResponse = UserSession.GetUserID();
-      string userId = "";
-      string userType = "";
-
-      m_currentUser = new User();
-
-      string[] data = serverResponse.Split('@');
-
-      userId = data[0];
-
-      userType = data[1];
+    internal void LogIn() {
       
-      UserType type = UserType.Null;
+      string userId   = UserSession.GetUserID();
+      string userName = UserSession.GetUserName();
+      string userRest = UserSession.GetUserRest();
+      int    userType = Convert.ToInt32(UserSession.GetUserType());
 
-      if(userType.Contains("1"))
-        type = UserType.Professor;
-      else if(userType.Contains("2"))
-        type = UserType.Coordenador;
-      else if(userType.Contains("3"))
-        type = UserType.Adm;
+      UserType type = (UserType)userType;
+      
+      switch(type) {
+      
+        case UserType.Professor: {
+          
+          if(userRest.Length > 0)
+            m_currentUser = new Professor(userRest);
+        }
+        break;
+        case UserType.Coordenador: {
+          
+          if(userRest.Length > 0)
+            m_currentUser = new Professor(userRest);
+        }
+        break;
+        case UserType.Adm: {
+          
+          if(userRest.Length > 0)
+            m_currentUser = new Professor(userRest);
+        }
+        break;
+      }
 
       m_currentUser.UserType = type;
 
