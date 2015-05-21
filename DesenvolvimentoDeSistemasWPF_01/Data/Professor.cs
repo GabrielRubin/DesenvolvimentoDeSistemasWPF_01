@@ -9,9 +9,9 @@ namespace DesenvolvimentoDeSistemasWPF_01
   
   public struct Restricao {
       
-    char m_dia;
-    char m_horaInit;
-    char m_horaFim;
+    public char m_dia;
+    public char m_horaInit;
+    public char m_horaFim;
 
     public Restricao(char dia, string hora) {
       
@@ -42,6 +42,21 @@ namespace DesenvolvimentoDeSistemasWPF_01
     public List<Restricao> GetRestricoes () {
     
       return m_restricoes;
+    }
+
+    public string GetRestricoesString () {
+      
+      string s = "";
+
+      for(int i = 0; i < m_restricoes.Count; i ++) {
+      
+        s += m_restricoes.ElementAt(i).m_dia + ":" + m_restricoes.ElementAt(i).m_horaInit + "-" + m_restricoes.ElementAt(i).m_horaFim;
+
+        if (i > 0)
+          s += ";";
+      }
+
+      return s;
     }
   }
 }
