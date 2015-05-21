@@ -1,0 +1,74 @@
+﻿<Window x:Class="DesenvolvimentoDeSistemasWPF_01.AdicionaRestricao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterScreen"
+        Title="AdicionaRestricao" Height="400" Width="400">
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.RowSpan="8" Grid.ColumnSpan="3" Background="LightSteelBlue" BorderBrush="SteelBlue" BorderThickness="1.5" />
+
+        <TextBlock Name="m_lblHoraInicial" Text="Horario Inicial" Grid.Row="1" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+
+        <ComboBox Name="m_comboBoxHoraInicial" Grid.Row="2" Grid.Column="1" FontSize="17" FontWeight="Bold">
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">A (08:00)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">B (08:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">C (09:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">D (10:40)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">E (11:35)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">F (14:00)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">G (14:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">H (15:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">I (16:40)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">J (17:35)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">K (18:45)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">L (19:30)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">M (20:15)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">N (21:15)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">P (22:00)</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Name="m_lblHoraFinal" Text="Horario Final" Grid.Row="3" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+
+        <ComboBox Name="m_comboBoxHoraFinal" Grid.Row="4" Grid.Column="1" FontSize="17" FontWeight="Bold">
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">A (08:00)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">B (08:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">C (09:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">D (10:40)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">E (11:35)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">F (14:00)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">G (14:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">H (15:50)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">I (16:40)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">J (17:35)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">K (18:45)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">L (19:30)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">M (20:15)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">N (21:15)</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">P (22:00)</ComboBoxItem>
+        </ComboBox>
+
+        <Button Grid.Row="6" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
+            Confirmar
+        </Button>
+
+    </Grid>
+</Window>

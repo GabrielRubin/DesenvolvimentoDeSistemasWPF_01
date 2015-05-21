@@ -1,0 +1,382 @@
+﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.PageProfessorRestricao"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="525"
+	Title="PageProfessorRestricao">
+    <!-- Root -->
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="1">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="1" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
+                Adicionar Restrição
+            </Button>
+
+        </Grid>
+        
+        <!--- Tabela de Horarios -->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions>
+
+            <!-- TOP LABELS -->
+            <Grid Grid.Row="0" Background="SteelBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- HEADER HORARIOS -->
+                <Grid Grid.Column="0">
+                    <Border BorderBrush="Black" BorderThickness="2"/>
+                    <Label Name="headerTime" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Horarios</Label>
+                </Grid>
+
+                <!-- HEADER DIAS -->
+                <Grid Grid.Column="1" Background="LightSteelBlue">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Column="0" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Column="1" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Column="2" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Column="3" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Column="4" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Column="5" BorderBrush="Black" BorderThickness="2"/>
+
+                    <Label Name="headerSeg" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">Segunda</Label>
+                    <Label Name="headerTer" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1">Terça</Label>
+                    <Label Name="headerQua" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2">Quarta</Label>
+                    <Label Name="headerQui" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3">Quinta</Label>
+                    <Label Name="headerSex" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4">Sexta</Label>
+                    <Label Name="headerSab" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="5">Sábado</Label>
+
+                </Grid>
+
+            </Grid>
+
+            <!-- BOTTOM INFO -->
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="7*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- LABELS HORARIOS -->
+                <Grid Grid.Column="0" Background="LightSteelBlue">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="1" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="2" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="3" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="4" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="5" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="6" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="7" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="8" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="9" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="10" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="11" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="12" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="13" BorderBrush="Black" BorderThickness="2"/>
+                    <Border Grid.Row="14" BorderBrush="Black" BorderThickness="2"/>
+
+                    <Label Name="headerHa" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0">A</Label>
+                    <Label Name="headerHb" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0">B</Label>
+                    <Label Name="headerHc" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0">C</Label>
+                    <Label Name="headerHd" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0">D</Label>
+                    <Label Name="headerHe" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0">E</Label>
+                    <Label Name="headerHf" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0">F</Label>
+                    <Label Name="headerHg" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0">G</Label>
+                    <Label Name="headerHh" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="7" Grid.Column="0">H</Label>
+                    <Label Name="headerHi" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="8" Grid.Column="0">I</Label>
+                    <Label Name="headerHj" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="9" Grid.Column="0">J</Label>
+                    <Label Name="headerHk" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="10" Grid.Column="0">K</Label>
+                    <Label Name="headerHl" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="11" Grid.Column="0">L</Label>
+                    <Label Name="headerHm" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="12" Grid.Column="0">M</Label>
+                    <Label Name="headerHn" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="13" Grid.Column="0">N</Label>
+                    <Label Name="headerHp" FontWeight="ExtraBold" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="14" Grid.Column="0">P</Label>
+
+                </Grid>
+
+                <!-- TABELA -->
+                <Grid Grid.Column="1" Grid.ColumnSpan="1" Grid.RowSpan="1">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- SEGUNDA -->
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+
+                    <!-- TERÇA -->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+
+                    <!-- QUARTA -->
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+
+                    <!-- QUINTA -->
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+
+                    <!-- SEXTA -->
+                    <Grid Grid.Column="4">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+
+                    <!-- SABADO -->
+                    <Grid Grid.Column="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+
+                        <Border Grid.Row="0" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="1" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="2" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="3" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="4" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="5" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="6" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="7" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="8" BorderBrush="Black"  BorderThickness="1" Background="White" />
+                        <Border Grid.Row="9" BorderBrush="Black"  BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="10" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="11" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="12" BorderBrush="Black" BorderThickness="1" Background="White" />
+                        <Border Grid.Row="13" BorderBrush="Black" BorderThickness="1" Background="LightGray" />
+                        <Border Grid.Row="14" BorderBrush="Black" BorderThickness="1" Background="White" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+    </Grid>
+</Page>

@@ -25,8 +25,6 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Border Background="SteelBlue" Grid.RowSpan="7" Grid.ColumnSpan="3" />
-
         <TextBlock Name="m_lblId" Text="User Id" Grid.Row="0" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
         <TextBox Name="m_userId" Grid.Row="1" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>

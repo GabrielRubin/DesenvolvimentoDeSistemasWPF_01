@@ -58,6 +58,12 @@
     <Compile Include="Pages\PageProfessor.xaml.cs">
       <DependentUpon>PageProfessor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageProfessorIndic.xaml.cs">
+      <DependentUpon>PageProfessorIndic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageProfessorRestricao.xaml.cs">
+      <DependentUpon>PageProfessorRestricao.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\PageLoginModel.cs" />
     <Compile Include="ViewModels\PageProfessorModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -72,6 +78,9 @@
       <DependentUpon>TabelaDeHorarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <Compile Include="Windows\AdicionaRestricao.xaml.cs">
+      <DependentUpon>AdicionaRestricao.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\PageLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -96,7 +105,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageProfessorIndic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProfessorRestricao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TabelaDeHorarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdicionaRestricao.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

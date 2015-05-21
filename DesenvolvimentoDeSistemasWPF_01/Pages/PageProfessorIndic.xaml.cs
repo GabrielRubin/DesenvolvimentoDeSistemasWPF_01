@@ -12,39 +12,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DesenvolvimentoDeSistemasWPF_01.ViewModels;
 
 namespace DesenvolvimentoDeSistemasWPF_01
 {
   /// <summary>
-  /// Interaction logic for PageProfessor.xaml
+  /// Interaction logic for PageProfessorIndic.xaml
   /// </summary>
-  public partial class PageProfessor : Page
+  public partial class PageProfessorIndic : Page
   {
-    PageProfessorModel m_model;
-
-    public PageProfessor()
+    public PageProfessorIndic()
     {
       InitializeComponent();
-
-      m_model = new PageProfessorModel();
-
-      DataContext = m_model;
     }
 
-    private void OnIndicacaoClick(object sender, RoutedEventArgs e)
+    private void OnRestricaoClick(object sender, RoutedEventArgs e)
     {
-      NavigationService.Navigate(new PageProfessorIndic());
+      NavigationService.Navigate(new PageProfessorRestricao());
     }
 
-    private void OnVerificarClick(object sender, RoutedEventArgs e)
+    private void OnAreaClick(object sender, RoutedEventArgs e)
     {
-      
+
     }
 
-    private void OnExitClick(object sender, RoutedEventArgs e)
+    private void OnCadeirasClick(object sender, RoutedEventArgs e)
     {
-      
+
     }
+
+    private void OnBackClick(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+
   }
 }
