@@ -54,6 +54,10 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
         UserIDErrorMsg = "Usuário não encontrado!";
         PassErrorMsg = "Senha não confere!";
       }
+      else if(Convert.ToInt32(UserSession.GetUserType()) > 1)
+      {
+        UserIDErrorMsg = "Usuário não disponível!";
+      }
     }
   }
 }

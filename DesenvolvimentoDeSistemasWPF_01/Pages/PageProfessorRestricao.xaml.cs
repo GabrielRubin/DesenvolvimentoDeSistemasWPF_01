@@ -106,13 +106,19 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     }
 
-    private void Button_Click(object sender, RoutedEventArgs e)
+    private void ButtonAdd_Click(object sender, RoutedEventArgs e)
     {
       AdicionaRestricao w = new AdicionaRestricao();
       w.Show();
       w.Closed += w_Closed;
 
       m_buttonAdd.IsEnabled = false;
+      m_buttonBack.IsEnabled = false;
+    }
+
+    private void ButtonBack_Click(object sender, RoutedEventArgs e)
+    {
+      NavigationService.GoBack();
     }
 
     void w_Closed(object sender, EventArgs e)

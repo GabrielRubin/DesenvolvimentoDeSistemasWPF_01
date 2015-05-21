@@ -14,7 +14,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     static string m_userId = "";
 
-    static string m_userType = "";
+    static string m_userType = "0";
 
     static string m_userRest = "";
 
@@ -110,7 +110,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       m_userId = "";
 
-      m_userType = "";
+      m_userType = "0";
 
       m_userRest = "";
     }

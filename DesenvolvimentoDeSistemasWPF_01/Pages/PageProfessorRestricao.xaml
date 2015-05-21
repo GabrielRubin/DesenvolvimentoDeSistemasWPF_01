@@ -17,12 +17,18 @@
         <Grid Grid.Row="1">
             
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"/>
                 <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.25*"/>
                 <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Name="m_buttonAdd" Grid.Row="1" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
+            <Button Name="m_buttonBack" Grid.Row="1" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="ButtonBack_Click" ClickMode="Release" IsEnabled="True">
+                Voltar
+            </Button>
+
+            <Button Name="m_buttonAdd" Grid.Row="1" Grid.Column="3" FontSize="15" FontWeight="ExtraBold" Click="ButtonAdd_Click" ClickMode="Release" IsEnabled="True">
                 Adicionar Restrição
             </Button>
 

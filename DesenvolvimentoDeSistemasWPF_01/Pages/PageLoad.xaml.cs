@@ -43,7 +43,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     void animationTimer_Tick(object sender, EventArgs e)
     {
-      if (UserSession.GetLoginAttempts() > 0 && UserSession.IsLogedIn())
+      if ((UserSession.GetLoginAttempts() > 0 && UserSession.IsLogedIn())
+            && (Convert.ToInt32(UserSession.GetUserType()) <= 1))
       {
         //NAVEGA PRA PAGINA DO USUARIO
         m_control.LogIn();
@@ -54,6 +55,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
           NavigationService.Navigate(new PageProfessor());
 
         animationTimer.Stop();
+        animationTimer.IsEnabled = false;
       }
       else
       {
@@ -62,6 +64,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
         if(NavigationService != null && NavigationService.CanGoBack)
           NavigationService.GoBack();
         animationTimer.Stop();
+        animationTimer.IsEnabled = false;
         Mouse.OverrideCursor = Cursors.Arrow;
       }
     }
