@@ -22,22 +22,26 @@ namespace DesenvolvimentoDeSistemasWPF_01
   {
     private List<Tuple<Button, Horario>> m_buttomHorarios;
     
-    public TesteRestricao test;
+    //public TesteRestricao test;
+
+    ControlFacade m_control;
 
     public PageProfessorRestricao()
     {
       m_buttomHorarios = new List<Tuple<Button, Horario>>();
 
-      test = new TesteRestricao();
+      //test = new TesteRestricao();
 
       Loaded += PageLogin_Loaded;
+
+      m_control = ControlFacade.Instance;
 
       InitializeComponent();
     }
 
     private void PageLogin_Loaded(object sender, RoutedEventArgs e)
     {
-      SetButtons(test.GetHorarios());
+      SetButtons(m_control.GetHorariosDoProfessor());
     }
 
     public void SetButtons(List<Horario> horarios)
