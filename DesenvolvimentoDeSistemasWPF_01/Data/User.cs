@@ -9,8 +9,13 @@ namespace DesenvolvimentoDeSistemasWPF_01
 {
   public enum UserType { Null, Professor, Coordenador, Adm };
 
+<<<<<<< HEAD
   public class User { 
     
+=======
+  public class User
+  {
+>>>>>>> origin/master
     string m_userID = "";
     public string UserID
     {
@@ -24,7 +29,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
                 m_userID = value;
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     string m_userName = "";
     public string UserName
     {
@@ -38,7 +46,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
                 m_userName = value;
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
     UserType m_userType = 0;
     public UserType UserType
     {
