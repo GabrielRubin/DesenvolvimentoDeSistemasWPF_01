@@ -49,6 +49,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return true;
     }
 
+    public static bool GetServerResponsePost(string serverResponse)
+    {
+      if(serverResponse.Contains("#OK"))
+        return true;
+      
+      return false;
+    }
+
     public static int GetLoginAttempts()
     {
       return m_loginAttempt;

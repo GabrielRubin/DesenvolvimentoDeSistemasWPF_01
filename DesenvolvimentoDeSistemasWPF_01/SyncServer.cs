@@ -58,5 +58,16 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       UserSession.GetServerResponse(task.Result);
     }
+
+    static public void MandarRestricoes (string userid, string horarios) {
+      
+      string url = m_serverBaseURL + "prh.php?R=" + userid + "&L=" + horarios +"&H=hash";
+
+      Task<string> task = GET(url);
+
+      Console.WriteLine(task.Result);
+
+      UserSession.GetServerResponsePost(task.Result);
+    }
   }
 }
