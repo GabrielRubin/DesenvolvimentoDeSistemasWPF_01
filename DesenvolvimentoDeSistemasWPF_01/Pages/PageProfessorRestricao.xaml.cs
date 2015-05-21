@@ -21,10 +21,21 @@ namespace DesenvolvimentoDeSistemasWPF_01
   public partial class PageProfessorRestricao : Page
   {
     private List<Tuple<Button, Horario>> m_buttomHorarios;
+    
+    public TesteRestricao test;
 
     public PageProfessorRestricao()
     {
+      test = new TesteRestricao();
+
+      Loaded += PageLogin_Loaded;
+
       InitializeComponent();
+    }
+
+    private void PageLogin_Loaded(object sender, RoutedEventArgs e)
+    {
+      SetButtons(test.GetHorarios());
     }
 
     public void SetButtons(List<Horario> horarios)

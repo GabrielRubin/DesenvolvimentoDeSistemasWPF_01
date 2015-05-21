@@ -86,5 +86,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       return m_currentUser.UserName;
     }
+
+    internal void CreateNewHorario()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

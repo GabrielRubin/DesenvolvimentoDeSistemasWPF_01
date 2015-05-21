@@ -19,13 +19,31 @@ namespace DesenvolvimentoDeSistemasWPF_01
   /// </summary>
   public partial class AdicionaRestricao : Window
   {
+    ControlFacade m_control;
+
     public AdicionaRestricao()
     {
       InitializeComponent();
+
+      m_control = ControlFacade.Instance;
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
+      if(m_comboBoxDia.SelectedIndex == -1)
+        return;
+      if(m_comboBoxHoraInicial.SelectedIndex == -1)
+        return;
+      if(m_comboBoxHoraFinal.SelectedIndex == -1)
+        return;
+
+      Horario h = new Horario();
+
+      h.Dia = (Dia)m_comboBoxDia.SelectedIndex;
+      h.HoraInicial = (HorarioLabel)m_comboBoxHoraInicial.SelectedIndex;
+      h.HoraFinal = (HorarioLabel)m_comboBoxHoraFinal.SelectedIndex;
+
+      m_control.CreateNewHorario();
     }
   }
 }
