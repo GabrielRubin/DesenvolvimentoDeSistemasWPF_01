@@ -1,4 +1,4 @@
-﻿using DesenvolvimentoDeSistemasWPF_01.Data;
+﻿using DesenvolvimentoDeSistemasWPF_01;
 using System;
 using System.Collections.Generic;
 using System.Linq;

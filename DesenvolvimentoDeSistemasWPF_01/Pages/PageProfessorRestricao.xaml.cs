@@ -26,6 +26,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     public PageProfessorRestricao()
     {
+      m_buttomHorarios = new List<Tuple<Button, Horario>>();
+
       test = new TesteRestricao();
 
       Loaded += PageLogin_Loaded;
@@ -62,6 +64,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
           m_buttomHorarios.Add(t);
         }
       }
+      //Console.WriteLine(ComponentTabelaDeHorarios.Children.Count);
     }
 
     private Button CreateButton(Horario h)
@@ -70,15 +73,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       newBtn.Content = "Restrição";
 
-      newBtn.SetValue(Grid.RowProperty, h.HoraInicial);
+      newBtn.SetValue(Grid.RowProperty, (int)h.HoraInicial);
 
-      newBtn.SetValue(Grid.RowSpanProperty, h.GetDuracao());
+      newBtn.SetValue(Grid.RowSpanProperty, (int)h.GetDuracao());
 
       newBtn.SetValue(Grid.ColumnProperty, (int)h.Dia);
 
       newBtn.Click += new RoutedEventHandler(HorarioButton_Click);
 
-      return null;
+      return newBtn;
     }
 
     private void HorarioButton_Click(object sender, RoutedEventArgs e)

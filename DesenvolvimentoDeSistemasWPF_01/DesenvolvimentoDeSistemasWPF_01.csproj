@@ -66,8 +66,10 @@
     <Compile Include="Pages\PageProfessorRestricao.xaml.cs">
       <DependentUpon>PageProfessorRestricao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TesteRestricao.cs" />
     <Compile Include="ViewModels\PageLoginModel.cs" />
     <Compile Include="ViewModels\PageProfessorModel.cs" />
+    <Compile Include="ViewModels\PageProfessorRestricaoModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Pages\PageLogin.xaml.cs">
       <DependentUpon>PageLogin.xaml</DependentUpon>

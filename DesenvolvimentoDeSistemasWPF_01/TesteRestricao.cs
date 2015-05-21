@@ -12,6 +12,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     public TesteRestricao()
     {
+      m_horarios = new List<Horario>();
+
       Horario h = new Horario();
 
       h.Dia = Dia.Seg;

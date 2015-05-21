@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DesenvolvimentoDeSistemasWPF_01.Data
+namespace DesenvolvimentoDeSistemasWPF_01
 {
   
   public struct Restricao {
