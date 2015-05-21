@@ -77,6 +77,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       newBtn.Content = "Restrição";
 
+      newBtn.Background = new SolidColorBrush(Color.FromRgb(70, 130, 180));
+
       newBtn.SetValue(Grid.RowProperty, (int)h.HoraInicial);
 
       newBtn.SetValue(Grid.RowSpanProperty, (int)h.GetDuracao());
@@ -108,6 +110,18 @@ namespace DesenvolvimentoDeSistemasWPF_01
     {
       AdicionaRestricao w = new AdicionaRestricao();
       w.Show();
+      w.Closed += w_Closed;
+
+      m_buttonAdd.IsEnabled = false;
+    }
+
+    void w_Closed(object sender, EventArgs e)
+    {
+      //InvalidateVisual();
+
+      m_buttonAdd.IsEnabled = true;
+
+      SetButtons(m_control.GetHorariosDoProfessor());
     }
   }
 }

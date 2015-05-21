@@ -16,6 +16,12 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
     static SyncState m_syncState = SyncState.Null;
 
+    public static string m_serverErrorMsg = "";
+
+    public static bool m_serverError = false;
+
+    public static bool m_serverFatalError = false;
+
     static private Task<string> GET(string url) {
       
       m_syncState = SyncState.Working;
@@ -67,7 +73,12 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Console.WriteLine(task.Result);
 
-      UserSession.GetServerResponsePost(task.Result);
+      //if (!task.Result.Contains("#OK"))
+      //{
+      //  m_serverError = true;
+
+      //  m_serverErrorMsg = "Dados inválidos";
+      //} 
     }
   }
 }

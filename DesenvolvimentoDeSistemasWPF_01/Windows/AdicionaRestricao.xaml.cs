@@ -31,19 +31,36 @@ namespace DesenvolvimentoDeSistemasWPF_01
     private void Button_Click(object sender, RoutedEventArgs e)
     {
       if(m_comboBoxDia.SelectedIndex == -1)
+      {
+        m_lblPassError.Text = "Selecione Um Dia!";
         return;
+      }
       if(m_comboBoxHoraInicial.SelectedIndex == -1)
+      {
+        m_lblPassError.Text = "Selecione um Horario Inicial!";
         return;
+      }
       if(m_comboBoxHoraFinal.SelectedIndex == -1)
+      {
+        m_lblPassError.Text = "Selecione um Horario Final!";
         return;
+      }
 
       Horario h = new Horario();
 
       h.Dia = (Dia)m_comboBoxDia.SelectedIndex;
+
+      if(!h.IsPossible((HorarioLabel)m_comboBoxHoraInicial.SelectedIndex, (HorarioLabel)m_comboBoxHoraFinal.SelectedIndex))
+      {
+        m_lblPassError.Text = "Horário Inicial maior que o final!";
+        return;
+      }
       h.HoraInicial = (HorarioLabel)m_comboBoxHoraInicial.SelectedIndex;
       h.HoraFinal = (HorarioLabel)m_comboBoxHoraFinal.SelectedIndex;
 
-      m_control.CreateNewHorario();
+      m_control.CreateNewHorario(h);
+
+      this.Close();
     }
   }
 }

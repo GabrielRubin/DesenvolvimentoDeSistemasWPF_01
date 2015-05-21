@@ -22,12 +22,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
   public partial class PageProfessor : Page
   {
     PageProfessorModel m_model;
+    ControlFacade m_control;
 
     public PageProfessor()
     {
       InitializeComponent();
 
       m_model = new PageProfessorModel();
+
+      m_control = ControlFacade.Instance;
 
       DataContext = m_model;
     }
@@ -44,7 +47,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void OnExitClick(object sender, RoutedEventArgs e)
     {
-      
+      m_control.Logout();
+
+      NavigationService.GoBack();
+      NavigationService.GoBack();
     }
   }
 }

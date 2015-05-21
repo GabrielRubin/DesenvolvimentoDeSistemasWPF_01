@@ -46,6 +46,11 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return m_restricoes;
     }
 
+    public void AddRestricao(Restricao r)
+    {
+      m_restricoes.Add(r);
+    }
+
     public string GetRestricoesString () {
       
       string s = "";

@@ -31,11 +31,11 @@
             Restrições de Horários
         </Button>
 
-        <Button Grid.Row="3" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnAreaClick" ClickMode="Release" IsEnabled="True">
+        <Button Grid.Row="3" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnAreaClick" ClickMode="Release" IsEnabled="False">
             Areas de Interesse
         </Button>
 
-        <Button Grid.Row="5" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnCadeirasClick" ClickMode="Release" IsEnabled="True">
+        <Button Grid.Row="5" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnCadeirasClick" ClickMode="Release" IsEnabled="False">
             Cadeiras de Interesse
         </Button>
 

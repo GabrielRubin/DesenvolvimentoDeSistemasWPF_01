@@ -85,7 +85,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
     public int GetDuracao()
     {
       if(m_horaInicial != null && m_horaFinal != null)
-        return (int)m_horaFinal - (int)m_horaInicial;
+        return ((int)m_horaFinal - (int)m_horaInicial) + 1;
       return 0;
     }
   }

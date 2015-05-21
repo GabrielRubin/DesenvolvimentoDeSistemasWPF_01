@@ -11,6 +11,8 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
     public PageProfessorModel()
     {
       ProfessorID = m_control.GetUserID();
+
+      ProfessorName = m_control.GetUserName();
     }
 
     string _ProfessorID = "";
@@ -35,7 +37,7 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
     {
         get
         {
-            return _ProfessorName;
+            return "Bem Vindo,\n" + _ProfessorName;
         }
         set
         {

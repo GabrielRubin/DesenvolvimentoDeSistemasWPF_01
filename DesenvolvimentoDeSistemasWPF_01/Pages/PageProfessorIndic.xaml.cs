@@ -42,7 +42,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void OnBackClick(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.GoBack();
     }
 
 

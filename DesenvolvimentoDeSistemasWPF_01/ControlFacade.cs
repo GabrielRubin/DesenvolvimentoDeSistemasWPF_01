@@ -69,6 +69,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
       m_currentUser.UserType = type;
 
       m_currentUser.UserID = userId;
+
+      m_currentUser.UserName = userName;
     }
 
     public List<Horario> GetHorariosDoProfessor()
@@ -138,9 +140,23 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return m_currentUser.UserName;
     }
 
-    internal void CreateNewHorario()
+    internal void CreateNewHorario(Horario h)
     {
-      throw new NotImplementedException();
+      if(m_currentUser.UserType == UserType.Professor && m_currentUser is Professor)
+      {
+        Professor professor = (Professor)m_currentUser;
+
+        professor.AddRestricao(new Restricao("" + (int)h.Dia, h.HoraInicial + "-" + h.HoraFinal));
+
+        SyncServer.MandarRestricoes(professor.UserID, professor.GetRestricoesString());
+      }
+    }
+
+    internal void Logout()
+    {
+      m_currentUser = null;
+
+      UserSession.Reset();
     }
   }
 }

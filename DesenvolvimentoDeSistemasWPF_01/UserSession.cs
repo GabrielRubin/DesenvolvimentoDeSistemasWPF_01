@@ -53,14 +53,6 @@ namespace DesenvolvimentoDeSistemasWPF_01
       return true;
     }
 
-    public static bool GetServerResponsePost(string serverResponse)
-    {
-      if(serverResponse.Contains("#OK"))
-        return true;
-      
-      return false;
-    }
-
     public static int GetLoginAttempts()
     {
       return m_loginAttempt;
@@ -106,6 +98,21 @@ namespace DesenvolvimentoDeSistemasWPF_01
       {
         Console.WriteLine("FAILED TO LOG IN!");
       }
+    }
+
+    internal static void Reset()
+    {
+      m_isLogged = false;
+
+      m_loginAttempt = 0;
+      
+      m_userName = "";
+
+      m_userId = "";
+
+      m_userType = "";
+
+      m_userRest = "";
     }
   }
 }
