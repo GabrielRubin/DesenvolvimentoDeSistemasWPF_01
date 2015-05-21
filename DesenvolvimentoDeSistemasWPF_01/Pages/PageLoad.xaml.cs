@@ -52,6 +52,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
         if(NavigationService != null)
           NavigationService.Navigate(new PageProfessor());
+
+        animationTimer.Stop();
       }
       else
       {

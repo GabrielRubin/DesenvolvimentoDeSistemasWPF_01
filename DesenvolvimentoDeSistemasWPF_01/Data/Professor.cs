@@ -9,17 +9,17 @@ namespace DesenvolvimentoDeSistemasWPF_01
   
   public struct Restricao {
       
-    public char m_dia;
-    public char m_horaInit;
-    public char m_horaFim;
+    public string m_dia;
+    public string m_horaInit;
+    public string m_horaFim;
 
-    public Restricao(char dia, string hora) {
+    public Restricao(string dia, string hora) {
       
       string[] h = hora.Split('-');
 
       m_dia      = dia;
-      m_horaInit = h[0][0];
-      m_horaFim  = h[1][0];
+      m_horaInit = h[0];
+      m_horaFim  = h[1];
     }
   }
 
@@ -34,13 +34,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
       string[] data = horarios.Split(';');
 
       for(int i = 0; i < data.Length; i++) {
-      
-        m_restricoes.Add(new Restricao(data[0][0], data[1]));
+        
+        string[] d = data[i].Split(':'); 
+
+        m_restricoes.Add(new Restricao(d[0], d[1]));
       }
     }
 
     public List<Restricao> GetRestricoes () {
-    
+      
       return m_restricoes;
     }
 
@@ -50,7 +52,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       for(int i = 0; i < m_restricoes.Count; i ++) {
       
-        s += m_restricoes.ElementAt(i).m_dia + ":" + m_restricoes.ElementAt(i).m_horaInit + "-" + m_restricoes.ElementAt(i).m_horaFim;
+        s += m_restricoes[i].m_dia + ":" + m_restricoes[i].m_horaInit + "-" + m_restricoes[i].m_horaFim;
 
         if (i > 0)
           s += ";";
