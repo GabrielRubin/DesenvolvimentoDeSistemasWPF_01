@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ControlFacade.cs" />
+    <Compile Include="Data\Horario.cs" />
     <Compile Include="Data\Professor.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Pages\PageProfessor.xaml.cs">
