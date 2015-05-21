@@ -39,8 +39,12 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       m_userType = data[2];
 
-      if(data.Length == 4)
-        m_userRest = data[3];
+      if(data.Length == 4) {
+        
+        string[] aux = data[3].Split(null);
+
+        m_userRest = aux[0];
+      }
 
       m_isLogged = true;
 

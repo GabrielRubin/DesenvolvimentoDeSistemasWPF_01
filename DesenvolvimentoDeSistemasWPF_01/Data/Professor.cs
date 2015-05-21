@@ -51,11 +51,11 @@ namespace DesenvolvimentoDeSistemasWPF_01
       string s = "";
 
       for(int i = 0; i < m_restricoes.Count; i ++) {
-      
-        s += m_restricoes[i].m_dia + ":" + m_restricoes[i].m_horaInit + "-" + m_restricoes[i].m_horaFim;
-
-        if (i > 0)
+        
+        if (i != 0)
           s += ";";
+
+        s += m_restricoes[i].m_dia + ":" + m_restricoes[i].m_horaInit + "-" + m_restricoes[i].m_horaFim;
       }
 
       return s;
