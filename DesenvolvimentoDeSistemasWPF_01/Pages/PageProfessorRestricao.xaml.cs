@@ -126,6 +126,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
       //InvalidateVisual();
 
       m_buttonAdd.IsEnabled = true;
+      m_buttonBack.IsEnabled = true;
 
       SetButtons(m_control.GetHorariosDoProfessor());
     }

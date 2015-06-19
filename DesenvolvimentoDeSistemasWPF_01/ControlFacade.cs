@@ -11,8 +11,6 @@ namespace DesenvolvimentoDeSistemasWPF_01
   {
     private static ControlFacade m_instance;
 
-    private User m_currentUser;
-    
     private ControlFacade() {}
     
     public static ControlFacade Instance
@@ -37,58 +35,24 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     internal void LogIn() {
       
-      string userId   = UserSession.GetUserID();
-      string userName = UserSession.GetUserName();
-      string userRest = UserSession.GetUserRest();
-      int    userType = Convert.ToInt32(UserSession.GetUserType());
-
-      UserType type = (UserType)userType;
-      
-      switch(type) {
-      
-        case UserType.Professor: {
-          
-          if(userRest.Length > 0)
-            m_currentUser = new Professor(userRest);
-        }
-        break;
-        case UserType.Coordenador: {
-          
-          if(userRest.Length > 0)
-            m_currentUser = new Professor(userRest);
-        }
-        break;
-        case UserType.Adm: {
-          
-          if(userRest.Length > 0)
-            m_currentUser = new Professor(userRest);
-        }
-        break;
-      }
-
-      m_currentUser.UserType = type;
-
-      m_currentUser.UserID = userId;
-
-      m_currentUser.UserName = userName;
     }
 
     public List<Horario> GetHorariosDoProfessor()
     {
-      if(m_currentUser.UserType == UserType.Professor && m_currentUser is Professor)
+      if(UserSession.GetCurrentUser().UserType == UserType.Professor && UserSession.GetCurrentUser() is Professor)
       {
         List<Horario> listHorarios = new List<Horario>();
 
-        Professor professor = (Professor)m_currentUser;
+        Professor professor = (Professor)UserSession.GetCurrentUser();
 
         List<Restricao> restricoes = professor.GetRestricoes();
 
         foreach(Restricao r in restricoes)
         {
           Horario h = new Horario();
-          h.Dia = (Dia)Convert.ToInt32(r.m_dia);
-          h.HoraInicial = (HorarioLabel)labelHorarioToInt(r.m_horaInit);
-          h.HoraFinal = (HorarioLabel)labelHorarioToInt(r.m_horaFim);
+          h.Dia = (Dia)Convert.ToInt32(r.dia);
+          h.HoraInicial = (HorarioLabel)labelHorarioToInt(r.hinicial);
+          h.HoraFinal = (HorarioLabel)labelHorarioToInt(r.hfinal);
 
           Console.WriteLine("Dia = " + h.Dia + " - HoraInicial = " + h.HoraInicial + " - HoraFinal = " + h.HoraFinal);
 
@@ -126,36 +90,34 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     public string GetUserID()
     {
-      if(m_currentUser == null)
+      if(UserSession.GetCurrentUser() == null)
         return "ERR: null";
 
-      return m_currentUser.UserID;
+      return UserSession.GetCurrentUser().UserID;
     }
 
     public string GetUserName()
     {
-      if(m_currentUser == null)
+      if(UserSession.GetCurrentUser() == null)
         return "ERR: null";
 
-      return m_currentUser.UserName;
+      return UserSession.GetCurrentUser().UserName;
     }
 
     internal void CreateNewHorario(Horario h)
     {
-      if(m_currentUser.UserType == UserType.Professor && m_currentUser is Professor)
+      if(UserSession.GetCurrentUser().UserType == UserType.Professor && UserSession.GetCurrentUser() is Professor)
       {
-        Professor professor = (Professor)m_currentUser;
+        Professor professor = (Professor)UserSession.GetCurrentUser();
 
-        professor.AddRestricao(new Restricao("" + (int)h.Dia, h.HoraInicial + "-" + h.HoraFinal));
-
-        SyncServer.MandarRestricoes(professor.UserID, professor.GetRestricoesString());
+        professor.AddRestricao(new Restricao("" + (int)h.Dia, h.HoraInicial.ToString(), h.HoraFinal.ToString()));
+        //professor.GetLastRestricaoJsonFormat();
+        SyncServer.MandarRestricoes(professor.UserID, professor.GetLastRestricaoJsonFormat());
       }
     }
 
-    internal void Logout()
-    {
-      m_currentUser = null;
-
+    internal void Logout() {
+      
       UserSession.Reset();
     }
   }

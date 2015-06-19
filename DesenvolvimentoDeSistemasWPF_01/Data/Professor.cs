@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01
@@ -9,17 +10,19 @@ namespace DesenvolvimentoDeSistemasWPF_01
   
   public struct Restricao {
       
-    public string m_dia;
-    public string m_horaInit;
-    public string m_horaFim;
+    string m_dia;
+    string m_horaInit;
+    string m_horaFim;
 
-    public Restricao(string dia, string hora) {
+    public string dia      { get{return m_dia;}      set{m_dia = value;} }
+    public string hinicial { get{return m_horaInit;} set{m_horaInit = value;} }
+    public string hfinal   { get{return m_horaFim;}  set{m_horaFim = value;} }
+
+    public Restricao(string dia, string hi, string hf) {
       
-      string[] h = hora.Split('-');
-
       m_dia      = dia;
-      m_horaInit = h[0];
-      m_horaFim  = h[1];
+      m_horaInit = hi;
+      m_horaFim  = hf;
     }
   }
 
@@ -27,18 +30,20 @@ namespace DesenvolvimentoDeSistemasWPF_01
        
     private List<Restricao> m_restricoes;
 
-    public Professor (string horarios) {
+    public Professor () {
+   
+    }
+
+    public void SetRestricoes (List<Restricao> list) {
       
-      m_restricoes = new List<Restricao>();
+      if (list == null) {
+      
+        m_restricoes = new List<Restricao>();
 
-      string[] data = horarios.Split(';');
-
-      for(int i = 0; i < data.Length; i++) {
-        
-        string[] d = data[i].Split(':'); 
-
-        m_restricoes.Add(new Restricao(d[0], d[1]));
+        return;
       }
+
+      m_restricoes = list;
     }
 
     public List<Restricao> GetRestricoes () {
@@ -51,18 +56,17 @@ namespace DesenvolvimentoDeSistemasWPF_01
       m_restricoes.Add(r);
     }
 
-    public string GetRestricoesString () {
+    public string GetRestricoesJsonFormat () {
       
-      string s = "";
+      string s = JsonConvert.SerializeObject(m_restricoes);
 
-      for(int i = 0; i < m_restricoes.Count; i ++) {
-        
-        if (i != 0)
-          s += ";";
+      return s;
+    }
 
-        s += m_restricoes[i].m_dia + ":" + m_restricoes[i].m_horaInit + "-" + m_restricoes[i].m_horaFim;
-      }
+    public string GetLastRestricaoJsonFormat () {
 
+      string s = JsonConvert.SerializeObject(m_restricoes[m_restricoes.Count-1]);
+      
       return s;
     }
   }

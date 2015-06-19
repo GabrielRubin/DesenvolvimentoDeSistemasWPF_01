@@ -51,15 +51,5 @@ namespace DesenvolvimentoDeSistemasWPF_01
         m_userType = value;
       }
     }
-
-    public User Create ( UserType type, string horarios = null ) {
-    
-      switch(type) {
-      
-        case UserType.Professor: return new Professor(horarios);
-      }
-
-      return null;
-    }
   }
 }

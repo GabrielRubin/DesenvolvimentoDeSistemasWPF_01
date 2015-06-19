@@ -48,15 +48,19 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
     }
 
     public void PageLoaded()
-    {
-      if(UserSession.GetLoginAttempts() > 0 && !UserSession.IsLogedIn())
-      {
-        UserIDErrorMsg = "Usuário não encontrado!";
-        PassErrorMsg = "Senha não confere!";
-      }
-      else if(Convert.ToInt32(UserSession.GetUserType()) > 1)
-      {
-        UserIDErrorMsg = "Usuário não disponível!";
+    { 
+
+      if(UserSession.GetCurrentUser() != null) {
+
+        if(UserSession.GetLoginAttempts() > 0 && !UserSession.IsLogedIn())
+        {
+          UserIDErrorMsg = "Usuário não encontrado!";
+          PassErrorMsg = "Senha não confere!";
+        }
+        else if(Convert.ToInt32(UserSession.GetCurrentUser().UserType) > 1)
+        {
+          UserIDErrorMsg = "Usuário não disponível!";
+        }
       }
     }
   }
