@@ -37,23 +37,42 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
             if(data["restricoes"] != null) {
               
-              if(data["restricoes"].ToString() == "-1") {
+              if(data["restricoes"].ToString() != "-1") {
               
-                ((Professor)m_currentUser).SetRestricoes(null);
-              }
-              else {
-
                 List<Restricao> restricoes = JsonConvert.DeserializeObject<List<Restricao>>(data["restricoes"].ToString());
 
                 ((Professor)m_currentUser).SetRestricoes(restricoes);
               }
             }
+
+            if(data["dinteresse"] != null) {
+              
+              if(data["dinteresse"].ToString() != "-1") {
+
+                List<string> dinteresse = JsonConvert.DeserializeObject<List<string>>(data["dinteresse"].ToString());
+
+                ((Professor)m_currentUser).SetDiscsInteresse(dinteresse);
+              }
+            }
+
+            if(data["ainteresse"] != null) {
+              
+              if(data["ainteresse"].ToString() != "-1") {
+
+                List<string> ainteresse = JsonConvert.DeserializeObject<List<string>>(data["restricoes"].ToString());
+
+                ((Professor)m_currentUser).SetAreasInteresse(ainteresse);
+              }
+            }
           } 
           break;
-          case UserType.Adm: {
+          case UserType.FuncApoio: {
           } 
           break;
-          case UserType.Coordenador: {
+          case UserType.CoordCurso: {
+          } 
+          break;
+          case UserType.CoordAcad: {
           } 
           break;
         }

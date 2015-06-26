@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01
 {
-  public enum UserType { Null, Professor, Coordenador, Adm, Func };
+  public enum UserType { Null, Professor, FuncApoio, CoordCurso, CoordAcad };
 
   public struct Access {
   
