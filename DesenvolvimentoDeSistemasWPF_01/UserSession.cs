@@ -61,6 +61,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
         m_currentUser.UserID   = data["registro"].ToString();
         m_currentUser.UserName = data["nome"].ToString();
         m_currentUser.UserType = tipo;
+
+        SyncServer.RelatorioAcessos(m_currentUser.UserID);
       }
 
       m_isLogged = true;
@@ -83,6 +85,20 @@ namespace DesenvolvimentoDeSistemasWPF_01
     public static User GetCurrentUser()
     {
       return m_currentUser;
+    }
+
+    public static bool ParseUserAccess(string msg) {
+
+      IDictionary data = JsonConvert.DeserializeObject<IDictionary>(msg);
+      
+      if(data["erro"] != null)
+        return false;
+
+      m_currentUser.SetAccess(Convert.ToInt32(data["dia"]), Convert.ToInt32(data["mes"]), Convert.ToInt32(data["ano"]));
+
+      Console.WriteLine(m_currentUser.GetAccess().m_day + " : " + m_currentUser.GetAccess().m_month + " : " + m_currentUser.GetAccess().m_year);
+
+      return true;
     }
 
     public static void Print() {

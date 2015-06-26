@@ -60,7 +60,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
 
       UserSession.GetServerResponse(task.Result);
     }
@@ -79,6 +79,17 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       //  m_serverErrorMsg = "Dados inválidos";
       //} 
+    }
+
+    static public void RelatorioAcessos(string user) {
+    
+      string url = m_serverBaseURL + "acess.php?R=" + user + "&H=hash";
+
+      Task<string> task = GET(url);
+
+      //Console.WriteLine(task.Result);
+
+      UserSession.ParseUserAccess(task.Result);
     }
   }
 }

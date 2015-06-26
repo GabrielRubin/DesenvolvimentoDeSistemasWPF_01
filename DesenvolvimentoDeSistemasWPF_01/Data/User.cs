@@ -7,7 +7,14 @@ using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01
 {
-  public enum UserType { Null, Professor, Coordenador, Adm };
+  public enum UserType { Null, Professor, Coordenador, Adm, Func };
+
+  public struct Access {
+  
+    public int m_year;
+    public int m_month;
+    public int m_day;
+  }
 
   public class User
   {
@@ -50,6 +57,20 @@ namespace DesenvolvimentoDeSistemasWPF_01
       {
         m_userType = value;
       }
+    }
+
+    Access m_userAccess = new Access();
+
+    public void SetAccess (int day, int month, int year) {
+    
+      m_userAccess.m_day   = day;
+      m_userAccess.m_month = month;
+      m_userAccess.m_year  = year;
+    }
+
+    public Access GetAccess () {
+    
+      return m_userAccess;
     }
   }
 }
