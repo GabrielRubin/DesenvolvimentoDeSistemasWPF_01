@@ -13,6 +13,14 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       
     }
 
+    public void AddCurso (string nome) {
+    
+      SyncServer.CadastrarCurso(nome);
+    }
 
+    public void AddDisciplina (string nome, int codCurso) {
+    
+      SyncServer.CadastrarDisciplina(nome, codCurso.ToString());
+    }
   }
 }

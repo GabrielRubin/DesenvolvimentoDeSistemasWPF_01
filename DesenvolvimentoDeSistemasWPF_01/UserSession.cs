@@ -81,14 +81,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
             if(data["codcurso"] != null) {
               
-              if(data["codcurso"] != "-1") {
+              if(data["codcurso"].ToString() != "-1") {
               
                 codCurso = Convert.ToInt32(data["codcurso"]);
               }
             }
             if(data["curso"] != null) {
               
-              if(data["curso"] != "-1") {
+              if(data["curso"].ToString() != "-1") {
               
                 nomeCurso = data["curso"].ToString();
               }

@@ -81,30 +81,27 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       //} 
     }
 
-    //TODO
-    static public void CadastrarProfessor(string codDisc, string nTurma) {
+    static public void CadastrarProfessor(string userid, string nome, string cargaH) {
     
-      string url = m_serverBaseURL + "addt.php?D=" + codDisc + "&N=" + nTurma + "&H=hash";
+      string url = m_serverBaseURL + "addp.php?R=" + userid + "&N=" + nome + "&C=" + cargaH + "&H=hash";
 
       Task<string> task = GET(url);
 
       //Console.WriteLine(task.Result);
     }
 
-    //TODO
-    static public void CadastrarCurso(string codDisc, string nTurma) {
+    static public void CadastrarCurso(string nome) {
     
-      string url = m_serverBaseURL + "addt.php?D=" + codDisc + "&N=" + nTurma + "&H=hash";
+      string url = m_serverBaseURL + "addc.php?&N=" + nome + "&H=hash";
 
       Task<string> task = GET(url);
 
       //Console.WriteLine(task.Result);
     }
 
-    //TODO
-    static public void CadastrarDisciplina(string codDisc, string nTurma) {
+    static public void CadastrarDisciplina(string nome, string codCurso) {
     
-      string url = m_serverBaseURL + "addt.php?D=" + codDisc + "&N=" + nTurma + "&H=hash";
+      string url = m_serverBaseURL + "addd.php?N=" + nome + "&C=" + codCurso + "&H=hash";
 
       Task<string> task = GET(url);
 
