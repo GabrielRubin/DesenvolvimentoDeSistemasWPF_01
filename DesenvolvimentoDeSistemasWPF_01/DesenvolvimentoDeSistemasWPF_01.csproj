@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>Json\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -57,6 +57,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ControlFacade.cs" />
+    <Compile Include="Data\CoordenadorCurso.cs" />
+    <Compile Include="Data\Curso.cs" />
+    <Compile Include="Data\Disciplina.cs" />
+    <Compile Include="Data\Funcionario.cs" />
     <Compile Include="Data\Horario.cs" />
     <Compile Include="Data\Professor.cs" />
     <Compile Include="Data\User.cs" />

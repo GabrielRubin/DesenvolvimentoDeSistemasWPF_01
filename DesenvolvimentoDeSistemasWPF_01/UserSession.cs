@@ -67,9 +67,49 @@ namespace DesenvolvimentoDeSistemasWPF_01
           } 
           break;
           case UserType.FuncApoio: {
+
+            m_currentUser = new Funcionario();
           } 
           break;
           case UserType.CoordCurso: {
+
+            m_currentUser = new CoordenadorCurso();
+
+            int codCurso = -1;
+            string nomeCurso = "";
+            Curso curso = null;
+
+            if(data["codcurso"] != null) {
+              
+              if(data["codcurso"] != "-1") {
+              
+                codCurso = Convert.ToInt32(data["codcurso"]);
+              }
+            }
+            if(data["curso"] != null) {
+              
+              if(data["curso"] != "-1") {
+              
+                nomeCurso = data["curso"].ToString();
+              }
+            }
+
+            if (codCurso != -1) {
+              
+              curso = new Curso(codCurso, nomeCurso);
+              ((CoordenadorCurso)m_currentUser).SetCurso(curso);
+            }
+
+            if(data["discipinas"] != null) {
+              
+              if(data["discipinas"].ToString() != "-1") {
+
+                List<Disciplina> discs = JsonConvert.DeserializeObject<List<Disciplina>>(data["discipinas"].ToString());
+
+                if(curso != null)
+                  curso.SetDisciplinas(discs);
+              }
+            }
           } 
           break;
           case UserType.CoordAcad: {

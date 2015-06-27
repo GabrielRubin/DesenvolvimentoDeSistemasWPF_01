@@ -81,6 +81,15 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       //} 
     }
 
+    static public void CadastrarTurmaDisc(string codDisc, string nTurma) {
+    
+      string url = m_serverBaseURL + "addt.php?D=" + codDisc + "&N=" + nTurma + "&H=hash";
+
+      Task<string> task = GET(url);
+
+      //Console.WriteLine(task.Result);
+    }
+
     static public void RelatorioAcessos(string user) {
     
       string url = m_serverBaseURL + "acess.php?R=" + user + "&H=hash";
