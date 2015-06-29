@@ -67,6 +67,9 @@
     <Compile Include="Pages\PageFuncApoio.xaml.cs">
       <DependentUpon>PageFuncApoio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageFuncApoioAcademico.xaml.cs">
+      <DependentUpon>PageFuncApoioAcademico.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageProfessor.xaml.cs">
       <DependentUpon>PageProfessor.xaml</DependentUpon>
     </Compile>
@@ -82,6 +85,7 @@
     <Compile Include="Pages\PageProfessorRestricao.xaml.cs">
       <DependentUpon>PageProfessorRestricao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\PageFuncApoioAcademicoModel.cs" />
     <Compile Include="ViewModels\PageFuncModel.cs" />
     <Compile Include="ViewModels\PageProfessorAreasModel.cs" />
     <Compile Include="ViewModels\PageProfessorDisciplinasModel.cs" />
@@ -101,10 +105,17 @@
       <DependentUpon>TabelaDeHorarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <Compile Include="Windows\AdicionaDisciplina.xaml.cs">
+      <DependentUpon>AdicionaDisciplina.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdicionaRestricao.xaml.cs">
       <DependentUpon>AdicionaRestricao.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\PageFuncApoio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageFuncApoioAcademico.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TabelaDeHorarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdicionaDisciplina.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

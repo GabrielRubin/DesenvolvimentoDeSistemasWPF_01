@@ -42,7 +42,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void m_btAcademicos_Click(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.Navigate(new PageFuncApoioAcademico());
     }
 
     private void OnExitClick(object sender, RoutedEventArgs e)

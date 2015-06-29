@@ -8,7 +8,7 @@
 	Title="PageProfessorAreas">
 
     <Grid>
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*" />
             <RowDefinition Height="1*" />
@@ -21,7 +21,7 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="0.1*"/>
         </Grid.ColumnDefinitions>
-        
+
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.25*" />
@@ -62,12 +62,12 @@
                 <RowDefinition Height="0.5*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Digite o nome da Area" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Text="Digite o nome da Area" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold" Margin="24,36,24,0" />
 
             <TextBox Name="m_textBox" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" TextChanged="TextBox_TextChanged">
-                
+
             </TextBox>
-            
+
             <Grid Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.25*" />
@@ -96,7 +96,7 @@
             <TextBlock Grid.Row="0" Text="Areas Indicadas" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
             <ListBox Grid.Row="1" Name="m_listAreas" SelectionChanged="m_listAreas_SelectionChanged">
-                
+
             </ListBox>
 
             <Grid Grid.Row="2">

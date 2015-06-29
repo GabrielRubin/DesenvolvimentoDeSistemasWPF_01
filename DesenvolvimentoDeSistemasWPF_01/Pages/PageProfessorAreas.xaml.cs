@@ -82,5 +82,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
       }
     }
 
+    private void m_btRemoverCurso_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    private void m_btAdicionarCurso_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
   }
 }

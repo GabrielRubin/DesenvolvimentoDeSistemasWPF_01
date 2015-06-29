@@ -49,6 +49,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
   public class DisciplinaModel : ObservableCollection<string>
   {
+    public DisciplinaModel() { }
     public DisciplinaModel(List<string> data)
     {
       foreach(string s in data)
