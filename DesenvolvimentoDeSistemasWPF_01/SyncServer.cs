@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -73,6 +75,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Console.WriteLine(task.Result);
 
+      if(CheckError(task.Result))
+        return;
+
       //if (!task.Result.Contains("#OK"))
       //{
       //  m_serverError = true;
@@ -87,6 +92,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
+      if(CheckError(task.Result))
+        return;
+
       //Console.WriteLine(task.Result);
     }
 
@@ -95,6 +103,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       string url = m_serverBaseURL + "addi.php?R=" + userid + "&N=" + nome + "&H=hash";
 
       Task<string> task = GET(url);
+
+      if(CheckError(task.Result))
+        return;
 
       //Console.WriteLine(task.Result);
     }
@@ -105,6 +116,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
+      if(CheckError(task.Result))
+        return;
+
       //Console.WriteLine(task.Result);
     }
 
@@ -113,6 +127,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       string url = m_serverBaseURL + "addc.php?&N=" + nome + "&S=" + nSemestres + "&H=hash";
 
       Task<string> task = GET(url);
+
+      if(CheckError(task.Result))
+        return;
 
       //Console.WriteLine(task.Result);
     }
@@ -123,6 +140,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
+      if(CheckError(task.Result))
+        return;
+
       //Console.WriteLine(task.Result);
     }
 
@@ -131,6 +151,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       string url = m_serverBaseURL + "addt.php?D=" + codDisc + "&N=" + nTurma + "&H=hash";
 
       Task<string> task = GET(url);
+
+      if(CheckError(task.Result))
+        return;
 
       //Console.WriteLine(task.Result);
     }
@@ -143,7 +166,26 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       //Console.WriteLine(task.Result);
 
+      if(CheckError(task.Result))
+        return;
+
       UserSession.ParseUserAccess(task.Result);
+    }
+
+    static public bool CheckError(string msg) { // msg = json format!!!
+      
+      IDictionary data = JsonConvert.DeserializeObject<IDictionary>(msg);
+
+      if(data["erro"] != null) {
+      
+        m_serverError = true;
+        
+        m_serverErrorMsg = data["erro"].ToString();
+
+        return true;
+      }
+
+      return false;
     }
   }
 }
