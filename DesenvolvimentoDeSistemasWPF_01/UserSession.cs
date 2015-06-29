@@ -97,6 +97,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
             int codCurso = -1;
             string nomeCurso = "";
+            int nSemestres = -1;
             Curso curso = null;
 
             if(data["codcurso"] != null) {
@@ -106,6 +107,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
                 codCurso = Convert.ToInt32(data["codcurso"]);
               }
             }
+
             if(data["curso"] != null) {
               
               if(data["curso"].ToString() != "-1") {
@@ -114,9 +116,17 @@ namespace DesenvolvimentoDeSistemasWPF_01
               }
             }
 
+            if(data["nsemestres"] != null) {
+              
+              if(data["nsemestres"].ToString() != "-1") {
+              
+                nSemestres = Convert.ToInt32(data["nsemestres"]);
+              }
+            }
+
             if (codCurso != -1) {
               
-              curso = new Curso(codCurso, nomeCurso);
+              curso = new Curso(codCurso, nomeCurso, nSemestres);
               ((CoordenadorCurso)m_currentUser).SetCurso(curso);
             }
 

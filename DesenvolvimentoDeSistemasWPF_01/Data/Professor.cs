@@ -117,11 +117,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
     public void AddDiscInteresse(string d) {
 
       m_disciplinasInteresse.Add(d);
+
+      SyncServer.DisciplinaInteresse(UserID, d);
     }
 
     public void AddAreaInteresse(string a) {
 
       m_areasInteresse.Add(a);
+
+      SyncServer.AreaInteresse(UserID, a);
     }
 
     public string GetRestricoesJsonFormat () {

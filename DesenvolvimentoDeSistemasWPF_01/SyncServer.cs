@@ -108,18 +108,18 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       //Console.WriteLine(task.Result);
     }
 
-    static public void CadastrarCurso(string nome) {
+    static public void CadastrarCurso(string nome, string nSemestres) {
     
-      string url = m_serverBaseURL + "addc.php?&N=" + nome + "&H=hash";
+      string url = m_serverBaseURL + "addc.php?&N=" + nome + "&S=" + nSemestres + "&H=hash";
 
       Task<string> task = GET(url);
 
       //Console.WriteLine(task.Result);
     }
 
-    static public void CadastrarDisciplina(string nome, string codCurso) {
+    static public void CadastrarDisciplina(string nome, string codCurso, string semestre) {
     
-      string url = m_serverBaseURL + "addd.php?N=" + nome + "&C=" + codCurso + "&H=hash";
+      string url = m_serverBaseURL + "addd.php?N=" + nome + "&C=" + codCurso + "&S=" + semestre + "&H=hash";
 
       Task<string> task = GET(url);
 

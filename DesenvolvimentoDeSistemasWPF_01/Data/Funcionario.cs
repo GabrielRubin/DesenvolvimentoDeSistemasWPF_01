@@ -29,18 +29,18 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
     public List<Curso> GetCursos() { return m_cursos; } // só o nome e codigo !!!!!!!!!!!!!!
 
-    public void AddCurso (string nome) {
+    public void AddCurso (string nome, int nSemestres) {
       
-      Curso c = new Curso(m_cursos.Count, nome);
+      Curso c = new Curso(m_cursos.Count, nome, nSemestres);
 
       m_cursos.Add(c);
 
-      SyncServer.CadastrarCurso(nome);
+      SyncServer.CadastrarCurso(nome, nSemestres.ToString());
     }
 
-    public void AddDisciplina (string nome, int codCurso) {
+    public void AddDisciplina (string nome, int codCurso, int semestre) {
     
-      SyncServer.CadastrarDisciplina(nome, codCurso.ToString());
+      SyncServer.CadastrarDisciplina(nome, codCurso.ToString(), semestre.ToString());
     }
   }
 }
