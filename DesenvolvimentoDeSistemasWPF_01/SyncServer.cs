@@ -90,6 +90,24 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       //Console.WriteLine(task.Result);
     }
 
+    static public void DisciplinaInteresse(string userid, string nome) {
+    
+      string url = m_serverBaseURL + "addi.php?R=" + userid + "&N=" + nome + "&H=hash";
+
+      Task<string> task = GET(url);
+
+      //Console.WriteLine(task.Result);
+    }
+
+    static public void AreaInteresse(string userid, string nome) {
+    
+      string url = m_serverBaseURL + "adda.php?R=" + userid + "&N=" + nome + "&H=hash";
+
+      Task<string> task = GET(url);
+
+      //Console.WriteLine(task.Result);
+    }
+
     static public void CadastrarCurso(string nome) {
     
       string url = m_serverBaseURL + "addc.php?&N=" + nome + "&H=hash";
