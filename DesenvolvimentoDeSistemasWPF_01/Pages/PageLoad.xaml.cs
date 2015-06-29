@@ -54,8 +54,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
         {
           if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
             NavigationService.Navigate(new PageProfessor());
-          //if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
-          //  NavigationService.Navigate(new PageProfessor());
+          if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) == 2)
+            NavigationService.Navigate(new PageFuncApoio());
           //if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
           //  NavigationService.Navigate(new PageProfessor());
         }

@@ -27,13 +27,13 @@
 
         <TextBlock Name="m_lblId" Text="Login" Grid.Row="0" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <TextBox Name="m_userId" Text="11111111" Grid.Row="1" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <TextBox Name="m_userId" Text="22222222" Grid.Row="1" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
         <TextBlock Name="m_lblIDError" Text="{Binding UserIDErrorMsg}" Grid.Row="1" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
         <TextBlock Name="m_lblPass" Text="Senha" Grid.Row="2" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <PasswordBox Name="m_userPass" Password="professor123" Grid.Row="3" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <PasswordBox Name="m_userPass" Password="funcionario123" Grid.Row="3" Grid.Column="1" FontSize="19" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
         <TextBlock Name="m_lblPassError" Text="{Binding PassErrorMsg}" Grid.Row="3" Grid.Column="1" FontSize="17" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold"/>
 

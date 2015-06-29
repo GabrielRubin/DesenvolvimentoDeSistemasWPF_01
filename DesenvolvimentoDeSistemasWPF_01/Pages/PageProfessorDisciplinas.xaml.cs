@@ -20,7 +20,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
   /// </summary>
   public partial class PageProfessorDisciplinas : Page
   {
-    TesteDisciplinas m_test;
+    PageProfessorDisciplinasModel m_model;
     //DisciplinaModel m_modelDisciplinas;
     //DisciplinaModel m_modelProf;
     ControlFacade m_control;
@@ -29,17 +29,17 @@ namespace DesenvolvimentoDeSistemasWPF_01
     {
       InitializeComponent();
 
-      m_test = new TesteDisciplinas();
+      m_model = new PageProfessorDisciplinasModel();
 
       m_control = ControlFacade.Instance;
 
-      m_listOptions.DataContext = m_test;
+      m_listOptions.DataContext = m_model;
 
-      m_listOptions.ItemsSource = m_test.m_disciplinas;
+      m_listOptions.ItemsSource = m_model.m_disciplinas;
 
-      m_listSelected.DataContext = m_test;
+      m_listSelected.DataContext = m_model;
 
-      m_listSelected.ItemsSource = m_test.m_profDisciplinas;
+      m_listSelected.ItemsSource = m_model.m_profDisciplinas;
     }
 
     private void Remover_Click(object sender, RoutedEventArgs e)
@@ -50,8 +50,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
       }
       foreach(object obj in selected)
       {
-        m_test.AddToDisciplinas("" + obj);
-        m_test.RemoveFromProf("" + obj);
+        m_model.AddToDisciplinas("" + obj);
+        m_model.RemoveFromProf("" + obj);
       }
       m_btRemover.IsEnabled = false;
     }
@@ -64,20 +64,21 @@ namespace DesenvolvimentoDeSistemasWPF_01
       }
       foreach(object obj in selected)
       {
-        m_test.AddToProf("" + obj);
-        m_test.RemoveFromDisciplinas("" + obj);
+        m_model.AddToProf("" + obj);
+        m_model.RemoveFromDisciplinas("" + obj);
       }
       m_btAdicionar.IsEnabled = false;
     }
 
     private void Incluir_Click(object sender, RoutedEventArgs e)
     {
-
+      m_model.Confirm();
+      NavigationService.GoBack();
     }
 
     private void Cancelar_Click(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.GoBack();
     }
 
     private void m_listOptions_SelectionChanged(object sender, SelectionChangedEventArgs e)

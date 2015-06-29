@@ -1,0 +1,46 @@
+﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.PageFuncApoio"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PageFuncApoio">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="m_lblID" Grid.ColumnSpan="3" Text="{Binding FuncName}" Grid.Row="1" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <Button Name="m_btAcademicos" Grid.Row="3" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btAcademicos_Click" ClickMode="Release" IsEnabled="True">
+            Cadastro Academico
+        </Button>
+
+        <Button Name="m_btDocentes" Grid.Row="5" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btDocentes_Click" ClickMode="Release" IsEnabled="True">
+            Cadastro Docente
+        </Button>
+
+        <Button Grid.Row="7" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnExitClick" ClickMode="Release" IsEnabled="True">
+            Logout
+        </Button>
+
+    </Grid>
+</Page>

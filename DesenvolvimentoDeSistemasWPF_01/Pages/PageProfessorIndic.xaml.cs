@@ -32,7 +32,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void OnAreaClick(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.Navigate(new PageProfessorAreas());
     }
 
     private void OnCadeirasClick(object sender, RoutedEventArgs e)

@@ -31,7 +31,7 @@
             Restrições de Horários
         </Button>
 
-        <Button Grid.Row="3" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnAreaClick" ClickMode="Release" IsEnabled="False">
+        <Button Grid.Row="3" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnAreaClick" ClickMode="Release" IsEnabled="True">
             Areas de Interesse
         </Button>
 
