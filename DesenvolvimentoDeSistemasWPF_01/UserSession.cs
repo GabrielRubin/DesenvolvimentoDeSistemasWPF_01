@@ -79,6 +79,16 @@ namespace DesenvolvimentoDeSistemasWPF_01
           case UserType.FuncApoio: {
 
             m_currentUser = new Funcionario();
+
+            if(data["cursos"] != null) {
+              
+              if(data["cursos"].ToString() != "-1") {
+
+                List<Curso> c = JsonConvert.DeserializeObject<List<Curso>>(data["cursos"].ToString());
+
+                ((Funcionario)m_currentUser).SetCursos(c);
+              }
+            }
           } 
           break;
           case UserType.CoordCurso: {
