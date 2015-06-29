@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01 {
   
-  class Curso {
+  public class Curso {
     
     private int m_codCurso;
     private string m_nome;
@@ -50,6 +50,11 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       m_disciplinas.Add(d);
 
       return true;
+    }
+
+    public override string ToString()
+    {
+      return m_nome;
     }
   }
 }

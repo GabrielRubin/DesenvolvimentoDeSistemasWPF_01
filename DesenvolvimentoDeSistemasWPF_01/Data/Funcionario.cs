@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01 {
 
-  class Funcionario : User {
+  public class Funcionario : User {
     
     private List<Curso> m_cursos;
 

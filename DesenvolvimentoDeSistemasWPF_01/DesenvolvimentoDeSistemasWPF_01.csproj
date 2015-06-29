@@ -35,7 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\..\..\Desktop\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -106,6 +106,9 @@
       <DependentUpon>TabelaDeHorarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserSession.cs" />
+    <Compile Include="Windows\AdicionaCurso.xaml.cs">
+      <DependentUpon>AdicionaCurso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AdicionaDisciplina.xaml.cs">
       <DependentUpon>AdicionaDisciplina.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TabelaDeHorarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AdicionaCurso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

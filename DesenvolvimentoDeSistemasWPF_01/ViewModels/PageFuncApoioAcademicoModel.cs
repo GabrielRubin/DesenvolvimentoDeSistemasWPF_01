@@ -17,7 +17,7 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
       Funcionario func = (Funcionario)UserSession.GetCurrentUser();
 
       m_disciplinas = new DisciplinaModel();
-      m_cursos      = new CursoModel();
+      m_cursos      = new CursoModel(func.GetCursos());
       
       //criar as listas:
       //m_disciplinas = new DisciplinaModel(prof.GetDiscsCursos().Except(prof.GetDiscsInteresse().ToList<string>()).ToList<string>());
@@ -34,14 +34,20 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
       m_disciplinas.Add(item);
     }
 
-    public void RemoveFromCursos(string item)
+    public void RemoveFromCursos(Curso item)
     {
-      m_cursos.Remove(item);
+      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
     }
 
-    public void AddToCursos(string item)
+    public void AddToCursos(Curso item)
     {
       m_cursos.Add(item);
+    }
+
+    public void AtualizaCursos()
+    {
+      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
+      m_cursos      = new CursoModel(func.GetCursos());
     }
 
     public void Confirm()
@@ -52,12 +58,12 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
     }
   }
 
-  public class CursoModel : ObservableCollection<string>
+  public class CursoModel : ObservableCollection<Curso>
   {
     public CursoModel() { }
-    public CursoModel(List<string> data)
+    public CursoModel(List<Curso> data)
     {
-      foreach(string s in data)
+      foreach(Curso s in data)
       {
         this.Add(s);
       }

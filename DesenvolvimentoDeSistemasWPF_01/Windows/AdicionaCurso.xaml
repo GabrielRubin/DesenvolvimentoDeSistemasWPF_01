@@ -1,7 +1,7 @@
-﻿<Window x:Class="DesenvolvimentoDeSistemasWPF_01.Windows.AdicionaDisciplina"
+﻿<Window x:Class="DesenvolvimentoDeSistemasWPF_01.Windows.AdicionaCurso"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="AdicionaDisciplina" Height="400" Width="400" MinHeight="400" MinWidth="400" MaxHeight="400" MaxWidth="400">
+        Title="AdicionaCurso" Height="400" Width="400" MinHeight="400" MinWidth="400" MaxHeight="400" MaxWidth="400">
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -29,33 +29,32 @@
 
         <TextBlock Name="m_lblNome" Text="Nome" Grid.Row="1" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <TextBox Name="m_textBoxNome" Grid.Row="2" Grid.Column="1" FontSize="17" FontWeight="Bold">
+        <TextBox Name="m_textBoxName" Grid.Row="2" Grid.Column="1" FontSize="17" FontWeight="Bold">
 
         </TextBox>
 
-        <TextBlock Name="m_lblCargaHoraria" Text="Carga Horaria" Grid.Row="3" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+        <TextBlock Name="m_lblNumeroDeSemestres" Text="Número de Semestres" Grid.Row="3" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <ComboBox Name="m_comboBoxCargaHoraria" Grid.Row="4" Grid.Column="1" FontSize="17" FontWeight="Bold">
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">1 Crédito Semanal</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">2 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">3 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">4 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">5 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">6 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">7 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">8 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">9 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">10 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">11 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">12 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">13 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">14 Créditos Semanais</ComboBoxItem>
-            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">15 Créditos Semanais</ComboBoxItem>
+        <ComboBox Name="m_comboNumeroDeSemestres" Grid.Row="4" Grid.Column="1" FontSize="17" FontWeight="Bold">
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">1 Semestre</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">2 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">3 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">4 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">5 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">6 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">7 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">8 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">9 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">10 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">11 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">12 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">13 Semestres</ComboBoxItem>
+            <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">14 Semestres</ComboBoxItem>
         </ComboBox>
 
-        <TextBlock Name="m_lblSemestre" Text="Semestre" Grid.Row="5" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
+        <!-- <TextBlock Name="m_lblSemestre" Text="Semestre" Grid.Row="5" Grid.Column="1" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold" />
 
-        <ComboBox Name="m_comboBoxSemestre" Grid.Row="6" Grid.Column="1" FontSize="17" FontWeight="Bold">
+        <ComboBox Name="m_comboBoxHoraFinal" Grid.Row="6" Grid.Column="1" FontSize="17" FontWeight="Bold">
             <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">Semestre 1</ComboBoxItem>
             <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">Semestre 2</ComboBoxItem>
             <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">Semestre 3</ComboBoxItem>
@@ -71,6 +70,7 @@
             <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">Semestre 13</ComboBoxItem>
             <ComboBoxItem FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontWeight="Bold">Semestre 14</ComboBoxItem>
         </ComboBox>
+        !-->
 
         <Grid Grid.Row="8" Grid.Column="1">
             <Grid.ColumnDefinitions>

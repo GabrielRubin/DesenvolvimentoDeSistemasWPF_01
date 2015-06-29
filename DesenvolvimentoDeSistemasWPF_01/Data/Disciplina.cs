@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DesenvolvimentoDeSistemasWPF_01 {
 
-  class Disciplina {
+  public class Disciplina {
     
     private int       m_codDisc;
     private string    m_nome;
