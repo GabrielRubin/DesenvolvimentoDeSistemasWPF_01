@@ -35,8 +35,8 @@
             Areas de Interesse
         </Button>
 
-        <Button Grid.Row="5" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnCadeirasClick" ClickMode="Release" IsEnabled="False">
-            Cadeiras de Interesse
+        <Button Grid.Row="5" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnCadeirasClick" ClickMode="Release" IsEnabled="True">
+            Disciplinas de Interesse
         </Button>
 
         <Button Grid.Row="7" Grid.Column="1" FontSize="15" FontWeight="ExtraBold" Click="OnBackClick" ClickMode="Release" IsEnabled="True">

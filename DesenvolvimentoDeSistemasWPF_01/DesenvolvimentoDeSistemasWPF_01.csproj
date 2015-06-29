@@ -67,12 +67,19 @@
     <Compile Include="Pages\PageProfessor.xaml.cs">
       <DependentUpon>PageProfessor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageProfessorAreas.xaml.cs">
+      <DependentUpon>PageProfessorAreas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageProfessorDisciplinas.xaml.cs">
+      <DependentUpon>PageProfessorDisciplinas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageProfessorIndic.xaml.cs">
       <DependentUpon>PageProfessorIndic.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageProfessorRestricao.xaml.cs">
       <DependentUpon>PageProfessorRestricao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TesteDisciplinas.cs" />
     <Compile Include="TesteRestricao.cs" />
     <Compile Include="ViewModels\PageLoginModel.cs" />
     <Compile Include="ViewModels\PageProfessorModel.cs" />
@@ -113,6 +120,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\PageProfessor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProfessorAreas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageProfessorDisciplinas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

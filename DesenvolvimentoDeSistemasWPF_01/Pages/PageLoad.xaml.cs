@@ -43,8 +43,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     void animationTimer_Tick(object sender, EventArgs e)
     {
-      if ((UserSession.GetLoginAttempts() > 0 && UserSession.IsLogedIn())
-            && (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1))
+      if (UserSession.GetLoginAttempts() > 0 && UserSession.IsLogedIn())
       {
         //NAVEGA PRA PAGINA DO USUARIO
         m_control.LogIn();
@@ -52,7 +51,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
         Mouse.OverrideCursor = Cursors.Arrow;
 
         if(NavigationService != null)
-          NavigationService.Navigate(new PageProfessor());
+        {
+          if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
+            NavigationService.Navigate(new PageProfessor());
+          //if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
+          //  NavigationService.Navigate(new PageProfessor());
+          //if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
+          //  NavigationService.Navigate(new PageProfessor());
+        }
 
         animationTimer.Stop();
         animationTimer.IsEnabled = false;

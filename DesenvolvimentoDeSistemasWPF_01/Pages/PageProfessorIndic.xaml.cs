@@ -37,7 +37,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void OnCadeirasClick(object sender, RoutedEventArgs e)
     {
-
+      NavigationService.Navigate(new PageProfessorDisciplinas());
     }
 
     private void OnBackClick(object sender, RoutedEventArgs e)
