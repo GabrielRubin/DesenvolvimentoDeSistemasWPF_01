@@ -29,12 +29,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
   public class Professor : User {
        
     private List<Restricao> m_restricoes;
+    private List<string>    m_disciplinasCursos;
     private List<string>    m_disciplinasInteresse;
     private List<string>    m_areasInteresse;
 
     public Professor () {
       
       m_restricoes           = new List<Restricao>();
+      m_disciplinasCursos    = new List<string>();
       m_disciplinasInteresse = new List<string>();
       m_areasInteresse       = new List<string>();
     }
@@ -49,6 +51,18 @@ namespace DesenvolvimentoDeSistemasWPF_01
       }
 
       m_restricoes = list;
+    }
+
+    public void SetDiscs (List<string> list) {
+      
+      if (list == null) {
+      
+        m_disciplinasCursos = new List<string>();
+
+        return;
+      }
+
+      m_disciplinasCursos = list;
     }
 
     public void SetDiscsInteresse (List<string> list) {
@@ -78,6 +92,11 @@ namespace DesenvolvimentoDeSistemasWPF_01
     public List<Restricao> GetRestricoes () {
       
       return m_restricoes;
+    }
+
+    public List<string> GetDiscsCursos () {
+      
+      return m_disciplinasCursos;
     }
 
     public List<string> GetDiscsInteresse () {

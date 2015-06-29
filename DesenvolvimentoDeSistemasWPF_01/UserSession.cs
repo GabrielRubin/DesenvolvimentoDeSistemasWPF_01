@@ -35,6 +35,16 @@ namespace DesenvolvimentoDeSistemasWPF_01
             
             m_currentUser = new Professor(); 
 
+            if(data["disciplinas"] != null) {
+              
+              if(data["disciplinas"].ToString() != "-1") {
+              
+                List<string> discs = JsonConvert.DeserializeObject<List<string>>(data["disciplinas"].ToString());
+
+                ((Professor)m_currentUser).SetDiscs(discs);
+              }
+            }
+
             if(data["restricoes"] != null) {
               
               if(data["restricoes"].ToString() != "-1") {
