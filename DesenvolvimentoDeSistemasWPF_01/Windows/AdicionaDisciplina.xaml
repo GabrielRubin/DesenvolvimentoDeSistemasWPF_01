@@ -87,9 +87,9 @@
 
         </Grid>
 
-        <Button Grid.Row="8" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
+        <!-- <Button Grid.Row="8" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
             Incluir
-        </Button>
+        </Button> -->
 
         <TextBlock Name="m_lblPassError" Text="" Grid.Row="7" Grid.Column="1" FontSize="15" Foreground="Red" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
 

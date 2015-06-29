@@ -57,6 +57,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ControlFacade.cs" />
+    <Compile Include="Data\CoordenadorAcad.cs" />
     <Compile Include="Data\CoordenadorCurso.cs" />
     <Compile Include="Data\Curso.cs" />
     <Compile Include="Data\Disciplina.cs" />

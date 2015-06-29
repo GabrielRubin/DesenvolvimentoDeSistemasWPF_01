@@ -133,6 +133,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
           } 
           break;
           case UserType.CoordAcad: {
+
+            m_currentUser = new CoordenadorAcad();
           } 
           break;
         }

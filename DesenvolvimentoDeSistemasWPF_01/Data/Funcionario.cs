@@ -30,7 +30,11 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     public List<Curso> GetCursos() { return m_cursos; } // só o nome e codigo !!!!!!!!!!!!!!
 
     public void AddCurso (string nome) {
-    
+      
+      Curso c = new Curso(m_cursos.Count, nome);
+
+      m_cursos.Add(c);
+
       SyncServer.CadastrarCurso(nome);
     }
 
