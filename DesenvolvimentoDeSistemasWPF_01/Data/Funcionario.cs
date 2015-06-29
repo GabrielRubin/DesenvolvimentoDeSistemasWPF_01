@@ -42,5 +42,10 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     
       SyncServer.CadastrarDisciplina(nome, codCurso.ToString(), semestre.ToString());
     }
+
+    public Curso GetCursoByIndex(int i) {
+    
+      return m_cursos[i];
+    }
   }
 }
