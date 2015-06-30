@@ -63,7 +63,7 @@
 
             <TextBlock Grid.Row="0" Text="Disciplinas Disponíveis" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
-            <ListBox Grid.Row="1" Name="m_listOptions" SelectionMode="Extended" SelectionChanged="m_listOptions_SelectionChanged" MouseEnter="m_listOptions_MouseEnter" MouseLeave="m_listOptions_MouseLeave">
+            <ListBox Grid.Row="1" Name="m_listOptions" SelectionMode="Single" SelectionChanged="m_listOptions_SelectionChanged" MouseEnter="m_listOptions_MouseEnter" MouseLeave="m_listOptions_MouseLeave">
 
             </ListBox>
 
@@ -94,7 +94,7 @@
 
             <TextBlock Grid.Row="0" Text="Disciplinas Indicadas" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
-            <ListBox Grid.Row="1" Name="m_listSelected" SelectionMode="Extended" SelectionChanged="m_listSelected_SelectionChanged" MouseEnter="m_listSelected_MouseEnter" MouseLeave="m_listSelected_MouseLeave">
+            <ListBox Grid.Row="1" Name="m_listSelected" SelectionMode="Single" SelectionChanged="m_listSelected_SelectionChanged" MouseEnter="m_listSelected_MouseEnter" MouseLeave="m_listSelected_MouseLeave">
 
             </ListBox>
 

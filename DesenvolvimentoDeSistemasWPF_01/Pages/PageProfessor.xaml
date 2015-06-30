@@ -16,28 +16,33 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
 
-            <RowDefinition Height="70"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
-    
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Name="m_lblID" Grid.ColumnSpan="3" Text="{Binding ProfessorName}" Grid.Row="1" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
-        <Button Grid.Row="3" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnIndicacaoClick" ClickMode="Release" IsEnabled="True">
+        <Button Grid.Row="2" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnIndicacaoClick" ClickMode="Release" IsEnabled="True">
             Realizar Indicação
         </Button>
 
-        <Button Grid.Row="5" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnVerificarClick" ClickMode="Release" IsEnabled="False">
+        <Button Grid.Row="4" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnVerificarClick" ClickMode="Release" IsEnabled="False">
             Verificar Alocação
         </Button>
 
-        <Button Grid.Row="7" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnExitClick" ClickMode="Release" IsEnabled="True">
+        <Button Grid.Row="6" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="ButtonHistorico_Click" ClickMode="Release" IsEnabled="True">
+            Historico de Acessos
+        </Button>
+
+        <Button Grid.Row="8" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnExitClick" ClickMode="Release" IsEnabled="True">
             Logout
         </Button>
 

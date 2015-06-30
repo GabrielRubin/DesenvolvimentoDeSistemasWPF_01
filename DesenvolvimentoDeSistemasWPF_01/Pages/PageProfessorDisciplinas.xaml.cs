@@ -44,6 +44,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void Remover_Click(object sender, RoutedEventArgs e)
     {
+      /*
       List<Object> selected = new List<Object>();
       foreach(object element in m_listSelected.SelectedItems) {
         selected.Add(element);
@@ -54,19 +55,26 @@ namespace DesenvolvimentoDeSistemasWPF_01
         m_model.RemoveFromProf("" + obj);
       }
       m_btRemover.IsEnabled = false;
+       */
     }
 
     private void Adicionar_Click(object sender, RoutedEventArgs e)
     {
-      List<Object> selected = new List<Object>();
-      foreach(object element in m_listOptions.SelectedItems) {
-        selected.Add(element);
-      }
-      foreach(object obj in selected)
+      if(m_listOptions.SelectedIndex >= 0)
       {
-        m_model.AddToProf("" + obj);
-        m_model.RemoveFromDisciplinas("" + obj);
+        m_model.AddToServer(m_listOptions.SelectedItem+"");
       }
+      else
+        Console.WriteLine("dadada");
+
+      m_listSelected.DataContext = m_model;
+
+      m_listSelected.ItemsSource = m_model.m_profDisciplinas;
+
+      m_listOptions.DataContext = m_model;
+
+      m_listOptions.ItemsSource = m_model.m_disciplinas;
+
       m_btAdicionar.IsEnabled = false;
     }
 
@@ -95,7 +103,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
     {
       if(m_listSelected.SelectedItems.Count > 0)
       {
-        m_btRemover.IsEnabled = true;
+        //m_btRemover.IsEnabled = true;
         m_listOptions.UnselectAll();
         m_btAdicionar.IsEnabled = false;
       }

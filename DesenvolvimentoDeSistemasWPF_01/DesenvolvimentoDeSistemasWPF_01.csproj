@@ -65,6 +65,9 @@
     <Compile Include="Data\Horario.cs" />
     <Compile Include="Data\Professor.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Pages\PageCordCurso.xaml.cs">
+      <DependentUpon>PageCordCurso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageFuncApoio.xaml.cs">
       <DependentUpon>PageFuncApoio.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,9 @@
     </Compile>
     <Compile Include="Pages\PageFuncApoioDocente.xaml.cs">
       <DependentUpon>PageFuncApoioDocente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageHistAcesso.xaml.cs">
+      <DependentUpon>PageHistAcesso.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageProfessor.xaml.cs">
       <DependentUpon>PageProfessor.xaml</DependentUpon>
@@ -89,6 +95,7 @@
     <Compile Include="Pages\PageProfessorRestricao.xaml.cs">
       <DependentUpon>PageProfessorRestricao.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\PageCordCursoModel.cs" />
     <Compile Include="ViewModels\PageFuncApoioAcademicoModel.cs" />
     <Compile Include="ViewModels\PageFuncApoioDocenteModel.cs" />
     <Compile Include="ViewModels\PageFuncModel.cs" />
@@ -119,6 +126,10 @@
     <Compile Include="Windows\AdicionaRestricao.xaml.cs">
       <DependentUpon>AdicionaRestricao.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\PageCordCurso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageFuncApoio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageFuncApoioDocente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageHistAcesso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

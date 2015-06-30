@@ -182,6 +182,8 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
         
         m_serverErrorMsg = data["erro"].ToString();
 
+        Console.WriteLine(m_serverErrorMsg);
+
         return true;
       }
 

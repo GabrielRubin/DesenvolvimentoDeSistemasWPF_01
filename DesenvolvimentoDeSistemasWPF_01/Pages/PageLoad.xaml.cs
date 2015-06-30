@@ -56,8 +56,8 @@ namespace DesenvolvimentoDeSistemasWPF_01
             NavigationService.Navigate(new PageProfessor());
           if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) == 2)
             NavigationService.Navigate(new PageFuncApoio());
-          //if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) <= 1)
-          //  NavigationService.Navigate(new PageProfessor());
+          if (Convert.ToInt32(UserSession.GetCurrentUser().UserType) == 3)
+            NavigationService.Navigate(new PageCordCurso());
         }
 
         animationTimer.Stop();

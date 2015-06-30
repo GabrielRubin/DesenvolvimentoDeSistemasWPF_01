@@ -1,0 +1,49 @@
+﻿<Page x:Class="DesenvolvimentoDeSistemasWPF_01.PageHistAcesso"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="PageHistAcesso">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.ColumnSpan="3" Text="Acessos Hoje" Grid.Row="1" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <TextBlock Name="m_histHoje" Grid.ColumnSpan="3" Text="" Grid.Row="2" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <TextBlock Grid.ColumnSpan="3" Text="Acessos no Mes" Grid.Row="3" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <TextBlock Name="m_histMes" Grid.ColumnSpan="3" Text="" Grid.Row="4" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <TextBlock Grid.ColumnSpan="3" Text="Acessos no Ano" Grid.Row="5" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <TextBlock Name="m_histAno" Grid.ColumnSpan="3" Text="" Grid.Row="6" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+
+        <Button Grid.Row="8" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="Button_Click" ClickMode="Release" IsEnabled="True">
+            Retornar
+        </Button>
+
+    </Grid>
+</Page>

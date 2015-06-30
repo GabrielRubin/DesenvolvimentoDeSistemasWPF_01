@@ -40,10 +40,18 @@ namespace DesenvolvimentoDeSistemasWPF_01
       m_profDisciplinas.Add(item);
     }
 
-    public void Confirm()
+    public void AddToServer(string item)
     {
       Professor prof = (Professor)UserSession.GetCurrentUser();
-      prof.SetDiscsInteresse(m_profDisciplinas.ToList<string>());
+      prof.AddDiscInteresse(item);
+      m_profDisciplinas = new DisciplinaModelProf(prof.GetDiscsInteresse());
+      m_disciplinas = new DisciplinaModelProf(prof.GetDiscsCursos().Except(prof.GetDiscsInteresse().ToList<string>()).ToList<string>());
+    }
+
+    public void Confirm()
+    {
+      //Professor prof = (Professor)UserSession.GetCurrentUser();
+      //prof.SetDiscsInteresse(m_profDisciplinas.ToList<string>());
     }
   }
 

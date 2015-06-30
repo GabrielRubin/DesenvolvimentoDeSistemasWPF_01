@@ -52,5 +52,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
       NavigationService.GoBack();
       NavigationService.GoBack();
     }
+
+    private void m_btAcessos_Click(object sender, RoutedEventArgs e)
+    {
+      NavigationService.Navigate(new PageHistAcesso());
+    }
   }
 }

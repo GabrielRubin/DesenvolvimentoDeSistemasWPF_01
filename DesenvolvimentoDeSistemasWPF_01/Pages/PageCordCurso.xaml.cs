@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesenvolvimentoDeSistemasWPF_01.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,50 +13,44 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DesenvolvimentoDeSistemasWPF_01.ViewModels;
 
 namespace DesenvolvimentoDeSistemasWPF_01
 {
   /// <summary>
-  /// Interaction logic for PageProfessor.xaml
+  /// Interaction logic for PageCordCurso.xaml
   /// </summary>
-  public partial class PageProfessor : Page
+  public partial class PageCordCurso : Page
   {
-    PageProfessorModel m_model;
+    PageCordCursoModel m_model;
     ControlFacade m_control;
 
-    public PageProfessor()
+    public PageCordCurso()
     {
       InitializeComponent();
 
-      m_model = new PageProfessorModel();
+      m_model = new PageCordCursoModel();
 
       m_control = ControlFacade.Instance;
 
       DataContext = m_model;
     }
 
-    private void OnIndicacaoClick(object sender, RoutedEventArgs e)
+    private void ButtonAcessos_Click(object sender, RoutedEventArgs e)
     {
-      NavigationService.Navigate(new PageProfessorIndic());
+      NavigationService.Navigate(new PageHistAcesso());
     }
 
-    private void OnVerificarClick(object sender, RoutedEventArgs e)
+    private void ButtonTurma_Click(object sender, RoutedEventArgs e)
     {
-      
+
     }
 
-    private void OnExitClick(object sender, RoutedEventArgs e)
+    private void ButtonExit_Click(object sender, RoutedEventArgs e)
     {
       m_control.Logout();
 
       NavigationService.GoBack();
       NavigationService.GoBack();
-    }
-
-    private void ButtonHistorico_Click(object sender, RoutedEventArgs e)
-    {
-      NavigationService.Navigate(new PageHistAcesso());
     }
   }
 }

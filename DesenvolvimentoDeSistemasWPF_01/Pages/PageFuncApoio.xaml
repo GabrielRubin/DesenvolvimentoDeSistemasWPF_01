@@ -17,8 +17,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
 
-            <RowDefinition Height="70"/>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
@@ -30,15 +31,19 @@
 
         <TextBlock Name="m_lblID" Grid.ColumnSpan="3" Text="{Binding FuncName}" Grid.Row="1" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
-        <Button Name="m_btAcademicos" Grid.Row="3" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btAcademicos_Click" ClickMode="Release" IsEnabled="True">
+        <Button Name="m_btAcademicos" Grid.Row="2" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btAcademicos_Click" ClickMode="Release" IsEnabled="True">
             Cadastro Academico
         </Button>
 
-        <Button Name="m_btDocentes" Grid.Row="5" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btDocentes_Click" ClickMode="Release" IsEnabled="True">
+        <Button Name="m_btDocentes" Grid.Row="4" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btDocentes_Click" ClickMode="Release" IsEnabled="True">
             Cadastro Docente
         </Button>
 
-        <Button Grid.Row="7" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnExitClick" ClickMode="Release" IsEnabled="True">
+        <Button Name="m_btAcessos" Grid.Row="6" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="m_btAcessos_Click" ClickMode="Release" IsEnabled="True">
+            Historico de Acessos
+        </Button>
+
+        <Button Grid.Row="8" Grid.Column="1" FontSize="17" FontWeight="ExtraBold" Click="OnExitClick" ClickMode="Release" IsEnabled="True">
             Logout
         </Button>
 
