@@ -95,7 +95,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void DisciplinaInteresse(string userid, string nome) {
@@ -107,7 +107,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void AreaInteresse(string userid, string nome) {
@@ -119,7 +119,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void CadastrarCurso(string nome, string nSemestres) {
@@ -131,7 +131,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void CadastrarDisciplina(string nome, string codCurso, string semestre) {
@@ -143,7 +143,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void CadastrarTurmaDisc(string codDisc, string nTurma) {
@@ -155,7 +155,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       if(CheckError(task.Result))
         return;
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
     }
 
     static public void RelatorioAcessos(string user) {
@@ -164,7 +164,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       Task<string> task = GET(url);
 
-      //Console.WriteLine(task.Result);
+      Console.WriteLine(task.Result);
 
       if(CheckError(task.Result))
         return;

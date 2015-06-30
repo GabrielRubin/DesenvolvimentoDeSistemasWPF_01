@@ -64,7 +64,9 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     }
 
     public void AddDisciplina (string nome, int codCurso, int semestre) {
-    
+      
+      m_cursos[codCurso-1].AddDisciplina(new Disciplina(0, nome, new List<int>(), semestre));
+
       SyncServer.CadastrarDisciplina(nome, codCurso.ToString(), semestre.ToString());
     }
 
