@@ -9,29 +9,25 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
 {
   class PageFuncApoioAcademicoModel : ViewModelBase
   {
-    public DisciplinaModel m_disciplinas;
+    public DisciplinaModelFunc m_disciplinas;
     public CursoModel m_cursos;
 
     public PageFuncApoioAcademicoModel()
     {
       Funcionario func = (Funcionario)UserSession.GetCurrentUser();
 
-      m_disciplinas = new DisciplinaModel();
+      m_disciplinas = new DisciplinaModelFunc();
       m_cursos      = new CursoModel(func.GetCursos());
-      
-      //criar as listas:
-      //m_disciplinas = new DisciplinaModel(prof.GetDiscsCursos().Except(prof.GetDiscsInteresse().ToList<string>()).ToList<string>());
-      //m_cursos = new CursoModel(prof.GetDiscsInteresse());
     }
 
     public void RemoveFromDisciplinas(string item)
     {
-      m_disciplinas.Remove(item);
+      //m_disciplinas.Remove(item);
     }
 
     public void AddToDisciplinas(string item)
     {
-      m_disciplinas.Add(item);
+      //m_disciplinas.Add(item);
     }
 
     public void RemoveFromCursos(Curso item)
@@ -50,11 +46,34 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
       m_cursos      = new CursoModel(func.GetCursos());
     }
 
+    public void AtualizaDisci(int cursoIndex)
+    {
+      //Console.WriteLine("cursoIndex = " + cursoIndex);
+      //Console.WriteLine("curso = " + m_cursos[cursoIndex]);
+      m_disciplinas = new DisciplinaModelFunc(m_cursos[cursoIndex].GetDisciplinas());
+
+      Console.WriteLine(m_cursos[cursoIndex].GetDisciplinas());
+      Console.WriteLine("size = " + m_cursos[cursoIndex].GetDisciplinas().Count);
+    }
+
     public void Confirm()
     {
       Funcionario func = (Funcionario)UserSession.GetCurrentUser();
 
       //prof.SetDiscsInteresse(m_profDisciplinas.ToList<string>());
+    }
+  }
+
+  public class DisciplinaModelFunc : ObservableCollection<Disciplina>
+  {
+    public DisciplinaModelFunc() { }
+    public DisciplinaModelFunc(List<Disciplina> data)
+    {
+      foreach(Disciplina dis in data)
+      {
+        this.Add(dis);
+        Console.WriteLine(dis);
+      }
     }
   }
 

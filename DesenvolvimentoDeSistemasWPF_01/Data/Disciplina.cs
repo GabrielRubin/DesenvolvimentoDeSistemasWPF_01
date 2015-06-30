@@ -37,5 +37,10 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
       return true;
     }
+
+    public override string ToString()
+    {
+      return m_nome;
+    }
   }
 }

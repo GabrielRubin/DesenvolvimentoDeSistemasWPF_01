@@ -10,12 +10,12 @@ namespace DesenvolvimentoDeSistemasWPF_01
 {
   class PageProfessorAreasModel : ViewModelBase
   {
-    public DisciplinaModel m_areas;
+    public DisciplinaModelProf m_areas;
 
     public PageProfessorAreasModel()
     {
       Professor prof = (Professor)UserSession.GetCurrentUser();
-      m_areas = new DisciplinaModel(prof.GetAreasInteresse());
+      m_areas = new DisciplinaModelProf(prof.GetAreasInteresse());
     }
 
     public void RemoveFromAreas(string item)

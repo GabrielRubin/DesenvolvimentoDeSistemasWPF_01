@@ -51,6 +51,12 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       windowAdiciona.Closed += w_AddCursoClosed;
 
+      m_listCursos.IsEnabled = false;
+
+      m_listCursos.SelectedIndex = -1;
+
+      m_btAdicionarDisci.IsEnabled = false;
+
       m_btAdicionarCurso.IsEnabled = false;
       m_btRemoverCurso.IsEnabled = false;
     }
@@ -69,6 +75,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
         AdicionaDisciplina addDisci = new AdicionaDisciplina(c.GetCodigo());
 
         addDisci.Show();
+
+        m_listCursos.IsEnabled = false;
+
+        m_listDisci.IsEnabled = false;
 
         addDisci.Closed += w_AddDisciClosed;
 
@@ -98,7 +108,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void m_listDisci_SelectionChanged(object sender, SelectionChangedEventArgs e)
     {
-      m_btAdicionarDisci.IsEnabled = true;
+      m_btAdicionarDisci.IsEnabled = false;
 
       m_listDisci.SelectedIndex = -1;
 
@@ -122,12 +132,24 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
       m_btRemoverCurso.IsEnabled = false;
 
+      m_listCursos.IsEnabled = true;
+
       AtualizaCursos();
     }
 
     void w_AddDisciClosed(object sender, EventArgs e)
     {
-      
+      m_btAdicionarDisci.IsEnabled = true;
+
+      m_btRemoverCurso.IsEnabled = false;
+
+      m_listCursos.IsEnabled = true;
+
+      m_listDisci.IsEnabled = true;
+
+      AtualizaDisciplinas(m_listCursos.SelectedIndex);
+
+      //Console.WriteLine("cursos index: " + m_listCursos.SelectedIndex);
     }
 
     void AtualizaCursos()
@@ -141,7 +163,11 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     void AtualizaDisciplinas(int curso)
     {
-      
+      m_model.AtualizaDisci(curso);
+
+      m_listDisci.DataContext = m_model;
+
+      m_listDisci.ItemsSource = m_model.m_disciplinas;
     }
   }
 }

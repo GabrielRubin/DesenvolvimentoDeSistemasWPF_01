@@ -10,14 +10,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
 {
   class PageProfessorDisciplinasModel : ViewModelBase
   {
-    public DisciplinaModel m_disciplinas;
-    public DisciplinaModel m_profDisciplinas;
+    public DisciplinaModelProf m_disciplinas;
+    public DisciplinaModelProf m_profDisciplinas;
 
     public PageProfessorDisciplinasModel()
     {
       Professor prof = (Professor)UserSession.GetCurrentUser();
-      m_disciplinas = new DisciplinaModel(prof.GetDiscsCursos().Except(prof.GetDiscsInteresse().ToList<string>()).ToList<string>());
-      m_profDisciplinas = new DisciplinaModel(prof.GetDiscsInteresse());
+      m_disciplinas = new DisciplinaModelProf(prof.GetDiscsCursos().Except(prof.GetDiscsInteresse().ToList<string>()).ToList<string>());
+      m_profDisciplinas = new DisciplinaModelProf(prof.GetDiscsInteresse());
     }
 
     public void RemoveFromDisciplinas(string item)
@@ -47,10 +47,10 @@ namespace DesenvolvimentoDeSistemasWPF_01
     }
   }
 
-  public class DisciplinaModel : ObservableCollection<string>
+  public class DisciplinaModelProf : ObservableCollection<string>
   {
-    public DisciplinaModel() { }
-    public DisciplinaModel(List<string> data)
+    public DisciplinaModelProf() { }
+    public DisciplinaModelProf(List<string> data)
     {
       foreach(string s in data)
       {

@@ -44,8 +44,11 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     public Disciplina GetDisciplina(int codigo) { 
     
       foreach(Disciplina disc in m_disciplinas)
+      {
+        Console.WriteLine(disc);
         if(disc.GetCodigo() == codigo)
           return disc;
+      }
 
       return null;
     }
