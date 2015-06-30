@@ -13,24 +13,31 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
 
     public PageFuncApoioDocenteModel()
     {
-      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
-
-      m_professores = new DadoDocenteModel();
+      AtualizaListaProf();
     }
 
-    public void AddProfessor(string nome, int horas)
+    public void AddProfessor(string nome, int registro, int horas)
     {
-      
+      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
+
+      func.AddProfessor(registro, nome, horas);
+    }
+
+    public void AtualizaListaProf()
+    {
+      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
+
+      m_professores = new DadoDocenteModel(func.GetProfessores());
     }
 
   }
 
-  public class DadoDocenteModel : ObservableCollection<Curso>
+  public class DadoDocenteModel : ObservableCollection<String>
   {
     public DadoDocenteModel() { }
-    public DadoDocenteModel(List<Curso> data)
+    public DadoDocenteModel(List<String> data)
     {
-      foreach(Curso s in data)
+      foreach(string s in data)
       {
         this.Add(s);
       }

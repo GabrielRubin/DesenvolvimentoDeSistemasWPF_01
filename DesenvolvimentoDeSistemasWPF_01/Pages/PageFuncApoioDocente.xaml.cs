@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesenvolvimentoDeSistemasWPF_01.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,28 @@ namespace DesenvolvimentoDeSistemasWPF_01
   /// </summary>
   public partial class PageFuncApoioDocente : Page
   {
+    PageFuncApoioDocenteModel m_model;
+
     public PageFuncApoioDocente()
     {
       InitializeComponent();
+
+      m_model = new PageFuncApoioDocenteModel();
+
+      AtualizaListDeProf();
     }
 
     private void m_textHora_PreviewKeyDown(object sender, KeyEventArgs e)
+    {
+      acceptOnlyNumbers(sender, e);
+    }
+
+    private void m_textRegistro_PreviewKeyDown(object sender, KeyEventArgs e)
+    {
+      acceptOnlyNumbers(sender, e);
+    }
+
+    private void acceptOnlyNumbers(object sender, KeyEventArgs e)
     {
       switch (e.Key)
       {
@@ -60,7 +77,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void m_textName_TextChanged(object sender, TextChangedEventArgs e)
     {
-      if(m_textName.Text != "" && m_textHora.Text != "")
+      if(m_textName.Text != "" && m_textRegistro.Text != "" && m_textHora.Text != "")
         m_btAdicionar.IsEnabled = true;
       else
         m_btAdicionar.IsEnabled = false;
@@ -68,7 +85,15 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
     private void m_textHora_TextChanged(object sender, TextChangedEventArgs e)
     {
-      if(m_textName.Text != "" && m_textHora.Text != "")
+      if(m_textName.Text != "" && m_textRegistro.Text != "" && m_textHora.Text != "")
+        m_btAdicionar.IsEnabled = true;
+      else
+        m_btAdicionar.IsEnabled = false;
+    }
+
+    private void m_textRegistro_TextChanged(object sender, TextChangedEventArgs e)
+    {
+      if(m_textName.Text != "" && m_textRegistro.Text != "" && m_textHora.Text != "")
         m_btAdicionar.IsEnabled = true;
       else
         m_btAdicionar.IsEnabled = false;
@@ -77,6 +102,19 @@ namespace DesenvolvimentoDeSistemasWPF_01
     private void m_btAdicionar_Click(object sender, RoutedEventArgs e)
     {
       //TODO > ADICIONAR PROFESSOR
+      int registro = -1;
+      int.TryParse(m_textRegistro.Text, out registro);
+      if(registro == -1)
+        Console.WriteLine("ERROR - REGISTRO = -1");
+
+      int horas = -1;
+      int.TryParse(m_textHora.Text, out horas);
+      if(horas == -1)
+        Console.WriteLine("ERROR - HORA = -1");
+
+      m_model.AddProfessor(m_textName.Text, registro, horas);
+      m_model.AtualizaListaProf();
+      AtualizaListDeProf();
     }
 
     private void m_btCancelar_Click(object sender, RoutedEventArgs e)
@@ -93,6 +131,14 @@ namespace DesenvolvimentoDeSistemasWPF_01
     {
       
     }
+
+    private void AtualizaListDeProf()
+    {
+      m_listProf.DataContext = m_model;
+
+      m_listProf.ItemsSource = m_model.m_professores;
+    }
+
   }
 
 

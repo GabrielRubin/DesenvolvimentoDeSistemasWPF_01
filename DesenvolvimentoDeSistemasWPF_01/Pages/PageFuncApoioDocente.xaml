@@ -53,26 +53,34 @@
 
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="0.25*" />
-                <RowDefinition Height="0.25*" />
-                <RowDefinition Height="0.25*" />
-                <RowDefinition Height="0.25*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.15*" />
                 <RowDefinition Height="0.25*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Nome do Professor" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold" Margin="24,36,24,0" />
+            <TextBlock Grid.Row="0" Text="Nome do Professor" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold"/>
 
             <TextBox Name="m_textName" Grid.Row="1" VerticalAlignment="Center" FontWeight="Bold" TextChanged="m_textName_TextChanged">
 
             </TextBox>
 
-            <TextBlock Grid.Row="2" Text="Carga Horaria" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold" Margin="24,36,24,0" />
+            <TextBlock Grid.Row="2" Text="Registro" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold"/>
 
-            <TextBox Name="m_textHora" Grid.Row="3" VerticalAlignment="Center" FontWeight="Bold" TextChanged="m_textHora_TextChanged" PreviewKeyDown="m_textHora_PreviewKeyDown">
+            <TextBox Name="m_textRegistro" Grid.Row="3" VerticalAlignment="Center" FontWeight="Bold" TextChanged="m_textRegistro_TextChanged" PreviewKeyDown="m_textRegistro_PreviewKeyDown">
 
             </TextBox>
 
-            <Grid Grid.Row="4">
+            <TextBlock Grid.Row="4" Text="Carga Horaria" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <TextBox Name="m_textHora" Grid.Row="5" VerticalAlignment="Center" FontWeight="Bold" TextChanged="m_textHora_TextChanged" PreviewKeyDown="m_textHora_PreviewKeyDown">
+
+            </TextBox>
+
+            <Grid Grid.Row="6">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="0.25*" />
                     <RowDefinition Height="1*" />
@@ -97,7 +105,7 @@
                 <RowDefinition Height="0.25*" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Text="Areas Indicadas" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
+            <TextBlock Grid.Row="0" Text="Professores Cadastrados" Grid.Column="0" FontSize="17" Foreground="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" />
 
             <ListBox Grid.Row="1" Name="m_listProf" SelectionChanged="m_listProf_SelectionChanged">
 

@@ -25,11 +25,6 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
       //m_disciplinas.Remove(item);
     }
 
-    public void AddToDisciplinas(string item)
-    {
-      //m_disciplinas.Add(item);
-    }
-
     public void RemoveFromCursos(Curso item)
     {
       Funcionario func = (Funcionario)UserSession.GetCurrentUser();
@@ -48,19 +43,7 @@ namespace DesenvolvimentoDeSistemasWPF_01.ViewModels
 
     public void AtualizaDisci(int cursoIndex)
     {
-      //Console.WriteLine("cursoIndex = " + cursoIndex);
-      //Console.WriteLine("curso = " + m_cursos[cursoIndex]);
       m_disciplinas = new DisciplinaModelFunc(m_cursos[cursoIndex].GetDisciplinas());
-
-      Console.WriteLine(m_cursos[cursoIndex].GetDisciplinas());
-      Console.WriteLine("size = " + m_cursos[cursoIndex].GetDisciplinas().Count);
-    }
-
-    public void Confirm()
-    {
-      Funcionario func = (Funcionario)UserSession.GetCurrentUser();
-
-      //prof.SetDiscsInteresse(m_profDisciplinas.ToList<string>());
     }
   }
 

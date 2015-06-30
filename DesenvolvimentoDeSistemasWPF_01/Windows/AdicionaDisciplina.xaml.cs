@@ -38,6 +38,7 @@ namespace DesenvolvimentoDeSistemasWPF_01.Windows
 
       Funcionario func = (Funcionario)UserSession.GetCurrentUser();
       func.AddDisciplina(m_textBoxNome.Text, m_codCurso, m_comboBoxSemestre.SelectedIndex);
+      this.Close();
     }
   }
 }
