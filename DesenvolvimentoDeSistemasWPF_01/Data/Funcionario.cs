@@ -10,9 +10,13 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     
     private List<Curso> m_cursos;
 
+    private List<string> m_professoresNomes;
+
     public Funcionario() {
     
-      m_cursos = new List<Curso>();  
+      m_cursos = new List<Curso>();
+
+      m_professoresNomes = new List<string>();
     }
 
     public void SetCursos(List<Curso> list) {
@@ -27,7 +31,21 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       m_cursos = list;
     }
 
-    public List<Curso> GetCursos() { return m_cursos; } // só o nome e codigo !!!!!!!!!!!!!!
+    public void SetProfessores(List<string> list) {
+    
+      if (list == null) {
+      
+        m_professoresNomes = new List<string>();
+
+        return;
+      }
+
+      m_professoresNomes = list;
+    }
+
+    public List<Curso> GetCursos() { return m_cursos; } 
+
+    public List<string> GetProfessores() { return m_professoresNomes; } 
 
     public void AddCurso (string nome, int nSemestres) {
       
@@ -36,6 +54,13 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
       m_cursos.Add(c);
 
       SyncServer.CadastrarCurso(nome, nSemestres.ToString());
+    }
+
+    public void AddProfessor (int regsitro, string nome, int carga) {
+      
+      m_professoresNomes.Add(nome);
+
+      SyncServer.CadastrarProfessor(regsitro.ToString(), nome, carga.ToString());
     }
 
     public void AddDisciplina (string nome, int codCurso, int semestre) {

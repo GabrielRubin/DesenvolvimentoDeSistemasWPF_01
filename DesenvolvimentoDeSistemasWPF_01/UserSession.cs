@@ -89,6 +89,16 @@ namespace DesenvolvimentoDeSistemasWPF_01
                 ((Funcionario)m_currentUser).SetCursos(c);
               }
             }
+
+            if(data["professores"] != null) {
+              
+              if(data["professores"].ToString() != "-1") {
+
+                List<string> p = JsonConvert.DeserializeObject<List<string>>(data["professores"].ToString());
+
+                ((Funcionario)m_currentUser).SetProfessores(p);
+              }
+            }
           } 
           break;
           case UserType.CoordCurso: {
