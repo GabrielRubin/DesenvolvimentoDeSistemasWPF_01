@@ -31,7 +31,7 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
 
     public void AddCurso (string nome, int nSemestres) {
       
-      Curso c = new Curso(m_cursos.Count, nome, nSemestres);
+      Curso c = new Curso(m_cursos.Count, nome, nSemestres, new List<Disciplina>());
 
       m_cursos.Add(c);
 

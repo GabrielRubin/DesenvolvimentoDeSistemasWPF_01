@@ -13,12 +13,20 @@ namespace DesenvolvimentoDeSistemasWPF_01 {
     private int m_nSemestres;
     private List<Disciplina> m_disciplinas;
 
-    public Curso (int codCurso, string nome, int semestres) {
+    /*public Curso (int codCurso, string nome, int semestres) {
       
       m_codCurso = codCurso;
       m_nome = nome;
       m_nSemestres = semestres;
       m_disciplinas = new List<Disciplina>();
+    }*/
+
+    public Curso (int codCurso, string nome, int nsemestres, List<Disciplina> disciplinas) {
+      
+      m_codCurso = codCurso;
+      m_nome = nome;
+      m_nSemestres = nsemestres;
+      m_disciplinas = disciplinas;
     }
 
     public int GetCodigo()       { return m_codCurso; }

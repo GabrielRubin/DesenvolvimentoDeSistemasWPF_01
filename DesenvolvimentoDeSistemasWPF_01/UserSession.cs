@@ -126,7 +126,7 @@ namespace DesenvolvimentoDeSistemasWPF_01
 
             if (codCurso != -1) {
               
-              curso = new Curso(codCurso, nomeCurso, nSemestres);
+              curso = new Curso(codCurso, nomeCurso, nSemestres, new List<Disciplina>());
               ((CoordenadorCurso)m_currentUser).SetCurso(curso);
             }
 
